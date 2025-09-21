@@ -1,0 +1,782 @@
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  
+  width: 100%;
+
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin:0;
+}
+
+.containerX {
+  max-width: 1200px;   /* maximum width of your site */
+  width: 90%;          /* width relative to screen (responsive) */
+  margin: 0 auto;      /* centers the container horizontally */
+}
+
+.box {
+  position:fixed;
+  z-index: 1000;
+  width: 100%;          /* box width */
+  height: 70px;         /* box height */
+ top:0px;
+ left:0px;
+ border-radius: 0px 0px 8px 8px;    /* rounded corners */
+  background-color: #def9f9; /* light background */
+}
+.lang-btn {
+  position: absolute; /* so we can control exact position */
+  top: 28px;    /* distance from top of box */
+  left: 16px;   /* distance from left of box */
+  width: 90px;
+  padding: 8px 30px 8px 12px; /* space for icons */
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background: rgb(255, 255, 255)
+   
+    url('downarrow.png') no-repeat right 8px center; /* add your arrow here */
+  background-size: 16px, 10px; /* globe 16px, arrow 10px */
+  appearance: none; /* remove default arrow */
+  cursor: pointer;
+  font-size: 14px;
+}
+#signup-btn .loginimage {
+  width: 20px;       /* desired width */
+  height: 20px;      /* desired height */
+  object-fit: contain; /* maintain aspect ratio */
+  vertical-align: middle; /* aligns with text */
+  margin-left: 6px;   /* optional: space between text and image */
+  transition: transform 0.3s ease; /* smooth hover scaling if needed */
+}
+#signup-btn:hover .loginimage {
+  transform: scale(1.2);
+}
+
+
+.arrow{
+  position:absolute;
+  top:auto;
+right: 8px;
+width:10px;
+height:auto;
+}
+
+.logo {
+  position: absolute;
+  top: 18px;   /* distance from top of box */
+  left: 650px;  /* distance from left of box */
+  width: 50px; /* adjust as needed */
+  height: auto;
+  border-radius: 50%; 
+}
+.logo1{
+  position: absolute;
+  top: 18px;   /* distance from top of box */
+  left: 480px;  /* distance from left of box */
+  width: 150px; /* adjust as needed */
+  height: auto;
+}
+
+.box-text {
+  font-size: 40px;
+  font-weight:bold;
+  color: #2207cd;
+  position: absolute;
+  top: 20px;   /* distance from top of box */
+  left: 700px;  /* distance from left of box */
+  width: 150px; /* adjust as needed */
+  height: auto;
+}
+
+.separator {
+  height: 50px;
+  width: 1px;                /* thickness of vertical bar */
+  background-color: #ccc;     
+  position: absolute;
+  top: 18px;                  /* 10px from top border of box */
+  bottom: 10px;               /* 10px from bottom border of box */
+  left: 640px;                 /* distance from left (after logo) */
+}
+
+
+
+
+
+
+
+/* Position buttons independently inside the top box */
+#login-btn {
+  position: absolute;
+  top: 25px;     /* distance from top of box */
+  right: 130px; /* distance from right edge */
+  border: solid black 2px;
+  border-radius: 88px;
+  padding: 7px 10px;
+  background-color: rgb(255, 255, 255);
+}
+#login-btn > .loginimage {
+  width: 24px;          /* set your desired width */
+  height: 24px;         /* set your desired height */
+  object-fit: contain;  /* maintain aspect ratio */
+  vertical-align: middle;
+  margin-left: 6px;     /* space between text and image */
+  transition: transform 0.3s ease; /* smooth hover effect */
+}
+
+/* Optional: scale image slightly on hover */
+#login-btn:hover > .loginimage {
+  transform: scale(1.2);
+}
+
+
+#login-btn:hover {
+  background-color: rgb(167, 228, 232); /* background color changes */
+  color: white;            /* text color changes */
+  border-color: black;     /* optional: border can change */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2); /* subtle shadow on hover */
+  cursor: pointer; 
+}
+#login-btn:hover #login-dropdown {
+  display: block;
+}
+
+#signup-btn {
+  position: absolute;
+  top: 29px;
+  right: 20px;
+  border: solid black 2px;
+border-radius: 88px;
+padding: 7px 9px;
+background-color: rgb(255, 255, 255);
+
+}
+#signup-btn:hover {
+  background-color: rgb(167, 228, 232); /* background color changes */
+  color: white;            /* text color changes */
+  border-color: black;     /* optional: border can change */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2); /* subtle shadow on hover */
+  cursor: pointer; 
+  
+}
+#signup-btn:hover .account-dropdown {
+  display: block;
+}
+
+
+/* Dropdown menu styling (same for both) */
+.account-dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;  /* below the button */
+  left: 0;
+  background: rgb(50, 159, 94);
+  border-radius: 6px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  z-index: 100;
+  min-width: 150px;
+  font-size: 14px;
+   
+}
+
+.account-dropdown .dropdown-section a {
+  display: block;
+  text-decoration: none;
+  color: #333;
+  padding: 4px 8px;
+  
+}
+
+.account-dropdown .dropdown-section a:hover {
+  background: linear-gradient(90deg, #ff6a00, #ee0979, #00c6ff);
+  color: white;
+  border-radius: 4px;
+
+}
+
+.facebook {
+  position: fixed;        
+  top: 250px;               
+  right: 0;               
+  transform: translateY(-50%);
+  background-color: #5b5c5d; 
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px 0 0 0;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  text-decoration: none;
+  z-index: 1000;
+  border: solid #000000;
+}
+
+.facebook img {
+  width: 54px;   
+  height: 54px;
+}
+
+
+/* Hover effect for Facebook button */
+.facebook:hover {
+  background-color: #4267B2; /* classic Facebook blue */
+  transform: translateY(-50%) scale(1.1); /* slightly bigger */
+  box-shadow: 0 6px 12px rgba(0,0,0,0.3); /* stronger shadow */
+  transition: all 0.3s ease; /* smooth transition */
+}
+
+/* Optional: change cursor to hand */
+.facebook {
+  cursor: pointer;
+}
+
+/* Control image inside Facebook button on hover */
+.facebook img {
+  width: 54px;   
+  height: 34px;
+  transition: transform 0.3s ease; /* smooth scaling */
+}
+
+.facebook:hover img {
+  transform: scale(1.1); /* image grows slightly on hover */
+}
+
+/* Base style for Instagram button */
+.instagram {
+  position: fixed;        
+  top: 287px;               
+  right: 0;               
+  transform: translateY(-50%);
+  background-color: #5b5c5d; /* Instagram pink */
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0px 0 0 0;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  text-decoration: none;
+  z-index: 1000;
+  border: solid #000000;
+  cursor: pointer; /* hand symbol */
+  transition: all 0.3s ease; /* smooth hover */
+}
+
+/* Hover effect */
+.instagram:hover {
+  background-color: #C13584; /* darker Instagram shade */
+  transform: translateY(-50%) scale(1.1); /* slightly bigger */
+  box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+}
+
+/* Image inside Instagram button */
+.instagram img {
+  width: 54px;   
+  height: 34px;
+  transition: transform 0.3s ease;
+}
+
+.instagram:hover img {
+  transform: scale(1.1); /* image grows slightly */
+}
+
+
+/* Base style already defined */
+.whatsapp {
+  position: fixed;        
+  top: 324px;               
+  right: 0;               
+  transform: translateY(-50%);
+  background-color: rgb(94, 88, 80);
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0 0 0 0;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  text-decoration: none;
+  z-index: 1000;
+  border: solid #000000;
+  cursor: pointer; /* hand symbol */
+  transition: all 0.3s ease; /* smooth hover */
+}
+
+/* Hover effect */
+.whatsapp:hover {
+  background-color: #b8f6cf; /* WhatsApp green */
+  transform: translateY(-50%) scale(1.1); /* slightly bigger */
+  box-shadow: 0 6px 12px rgba(0,0,0,0.3); /* stronger shadow */
+}
+
+/* Image inside WhatsApp button */
+.whatsapp img {
+  width: 40px;   
+  height: 37px;
+  transition: transform 0.3s ease;
+}
+
+.whatsapp:hover img {
+  transform: scale(1.1); /* image grows slightly on hover */
+}
+
+
+
+/* Base style already defined */
+.telegram {
+  position: fixed;        
+  top: 361px;               
+  right: 0;               
+  transform: translateY(-50%);
+  background-color: rgb(94, 88, 80);
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0 0 0 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  text-decoration: none;
+  z-index: 1000;
+  border: solid #000000;
+  cursor: pointer; /* hand symbol */
+  transition: all 0.3s ease; /* smooth hover */
+}
+
+/* Hover effect */
+.telegram:hover {
+  background-color: #0088cc; /* Telegram blue */
+  transform: translateY(-50%) scale(1.1); /* slightly bigger */
+  box-shadow: 0 6px 12px rgba(0,0,0,0.3); /* stronger shadow */
+}
+
+/* Image inside Telegram button */
+.telegram img {
+  width: 40px;   
+  height: 30px;
+  transition: transform 0.3s ease;
+}
+
+.telegram:hover img {
+  transform: scale(1.1); /* image grows slightly on hover */
+}
+
+
+.contact-btn .icon {
+  width: 30px;   /* Control logo size */
+  height: 30px;
+  display: block;
+}
+.contact-btn:hover {
+  background-color: #98c1ec;
+}
+
+.contact {
+  position: fixed;
+  bottom: 0;
+  right: 80px;
+  width: 90px;
+  height: 60px;
+  background-color: #6496e2;
+  border-radius: 8px 8px 0 0;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  z-index: 1000;
+  display: block;
+  text-decoration: none;
+  color: #0b006d;
+  font-weight: bold;
+  text-align: center;
+  line-height: 30px; /* vertically center text */
+  cursor: pointer;   /* hand symbol */
+  transition: transform 0.3s ease, opacity 0.3s ease, background-color 0.3s ease;
+}
+
+/* Hover effect */
+.contact:hover {
+  background-color: #93b9e2;  /* slightly darker on hover */
+  transform: scale(1.5);      /* small pop effect */
+  box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+}
+
+/* Hide on scroll */
+.scroll-btn.hide {
+  transform: translateY(100px);  /* move it down out of view */
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+
+
+.slideshow {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.slideshow img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  animation: fade 50s infinite;
+}
+
+.slideshow img:nth-child(1) { animation-delay: 0s; }
+.slideshow img:nth-child(2) { animation-delay: 5s; }
+.slideshow img:nth-child(3) { animation-delay: 10s; }
+.slideshow img:nth-child(4) { animation-delay: 15s; }
+.slideshow img:nth-child(5) { animation-delay: 20s; }
+.slideshow img:nth-child(6) { animation-delay: 25s; }
+.slideshow img:nth-child(7) { animation-delay: 30s; }
+.slideshow img:nth-child(8) { animation-delay: 35s; }
+.slideshow img:nth-child(9) { animation-delay: 40s; }
+.slideshow img:nth-child(10){ animation-delay: 45s; }
+
+@keyframes fade {
+  0% { opacity: 0; }
+  10% { opacity: 1; }
+  20% { opacity: 1; }
+  30% { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+
+.missions {
+  position: absolute;
+  top: 260px;
+  left: 220px;
+  transform: translateX(-50%);
+  color: rgb(22, 3, 74);
+  font-size: 2rem;
+  font-weight: bold;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+  font: bold;
+}
+
+.missions-content{
+  position: absolute;
+  top: 350px;
+  left: 290px;
+  transform: translateX(-50%);
+  color: rgb(0, 0, 0);
+  font-size: 2rem;
+  
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+  font: bold;
+}
+
+.container {
+  display: flex;        /* align circles in a row */
+  gap: 35px;            /* space between circles */
+  left: 0;
+}
+
+.circle-container {
+  display: flex;
+  gap: 10px;
+  flex-direction: column; /* stack circle + text vertically */
+ 
+  margin-left:20px ;    /* center text below circle */
+}
+
+.circle {
+  margin-top: 70px;
+  width: 180px;
+  height: 180px;
+  background-color: #2ecc71;
+  border-radius: 50%;
+  border: solid rgb(22, 146, 174) 10px;
+  overflow: hidden;
+  display: flex;
+  
+  justify-content: center;
+  align-items: center;
+}
+
+.circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.circle-text {
+  margin-top: 10px;
+  font-size: 30px;
+  font-weight: bold;
+  color: #75778d;
+  text-decoration: none;
+  gap:80;
+}
+
+.circle-text:hover {
+  color: blue;
+  text-decoration: underline;
+}
+
+
+
+/* Horizontal container */
+.horizontal-box {
+  display: flex;               /* horizontal layout */
+  gap: 90px;                   /* balanced space between items */
+  width: 100%;                 /* use available width */
+  padding: 20px 30px;          /* spacing inside container */
+  background-color: #d3e2ec;   /* container background */
+  box-sizing: border-box;      /* include padding in width */
+  overflow-x: hidden;            /* enable horizontal scroll if needed */
+  scroll-behavior: smooth; 
+  border: solid rgb(223, 204, 204) 8px;    /* smooth scrolling */
+}
+
+.horizontal-box .box-item {
+  z-index: 0;
+  overflow: hidden;
+  flex: 0 0 300px;             /* fixed card width */
+  height: 250px;               /* reduced height for balance */
+  background-color: #0c92b7;   /* card color */
+  border-radius: 12px;         /* smoother corners */
+  display: flex;
+  flex-direction: column;      /* allow heading + quote vertical */
+  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
+  text-align: center;  
+  object-fit: cover;
+  gap:12px;        /* center text */
+  padding: 20px;
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+  border: 4px solid #005f99;   /* thinner, cleaner border */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15); /* subtle shadow */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.horizontal-box .box-item:hover {
+  width:300px;
+  height:300px;
+  transform: translateY(-6px);   /* hover lift effect */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+.img{
+  width: 300px;
+ max-width: 100%;
+}
+
+
+/* Login dropdown container */
+.login-dropdown-container {
+  position: relative;
+  display: inline-block;
+}
+
+/* Button styling already exists in .btn and .login */
+.login-dropdown-container .dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  min-width: 140px;
+  border-radius: 6px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  z-index: 100;
+  font-size: 14px;
+}
+
+.login-dropdown-container .dropdown-content a {
+  color: #333;
+  padding: 6px 12px;
+  text-decoration: none;
+  display: block;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+.login-dropdown-container .dropdown-content a:hover {
+  background: linear-gradient(90deg, #ff6a00, #ee0979, #00c6ff);
+  color: white;
+}
+
+/* Show dropdown on hover */
+.login-dropdown-container:hover .dropdown-content {
+  display: block;
+  cursor: pointer;
+}
+/* Body for visibility */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f0f0f0; /* light gray page background */
+  font-family: Arial, sans-serif;
+}
+
+
+
+.horizontal-bar {
+  overflow: hidden;
+  display: flex;  
+  justify-content: center;   /* center items horizontally */
+  align-items: center;       /* center vertically */
+  position: relative;        /* for top-center text */
+  padding: 15px 20px;
+  background-color: #cde2f0;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(146, 84, 84, 0.2);
+  width: 100%;
+  height: 400px;
+  margin-top: 0px;
+  z-index: 0;
+  gap: 85px;                 /* space between the circles */
+}
+
+/* Top Center Text */
+.bar-text {
+ 
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 28px;
+  font-weight: bold;
+  color: #1c74a0;
+  text-align: center;
+  z-index: 1;
+}
+
+/* Circular Items */
+.bar-item {
+  margin-top: 130px;
+  margin-left: 2px;;
+  padding: 10px 20px;
+  background-color: #cde2f0;
+  color: #000;
+  border-radius: 50%;
+  border: 1px solid #ddd;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  height: 180px;
+  width: 180px;
+}
+
+/* Hover Effect */
+.bar-item:hover {
+ 
+  color: white;
+  transform: scale(1.05);
+}
+.bar-item img {
+  width: 100%;           /* fill the circular box */
+  height: 100%;          /* maintain circle shape */
+  object-fit: cover;     /* scale and crop to fit */
+  border-radius: 50%;    /* keep images circular */
+  transition: transform 0.3s ease; /* smooth hover effect */
+}
+
+.bar-item:hover img {
+  transform: scale(1.05); /* slight pop on hover */
+}
+
+
+.footer {
+  background: linear-gradient(to right, #4a90e2, #5bc0de);
+  color: #fff;
+  padding: 40px 20px;
+  font-family: Arial, sans-serif;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
+  gap: 30px;
+  margin-bottom: 20px;
+}
+
+.footer-column h4 {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+  color: #e6e6e6;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer-column ul li a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.3);
+  padding-top: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+}
+
+.social-links a {
+  color: #e6e6e6;
+  margin-left: 10px;
+  text-decoration: none;
+}
+
+.social-links a:hover {
+  color: #fff;
+}
+.teamNames{
+  color: #e6e6e6;
+  margin-left: 10px;
+  text-decoration: none;
+}
+.teamNames:hover {
+  color: #fff;
+}
+
+.bar-team {
+  margin-left: 250px; /* space from the left edge */
+  text-align: left;  /* keep items aligned from left */
+}
+
+.bar-team img {
+  width: 80px;          /* fixed width */
+  height: 80px; 
+  margin-left: 115px;        /* fixed height */
+  border-radius: 50%;   /* makes it circular */
+  object-fit: cover;    /* fills circle properly */
+  margin-bottom: 8px;
+}
+
+
+
+.bar-team span h2 {
+  color: blue;
+  margin: 0;
+  padding-left: 120px; /* optional extra space before "VisionX" */
+}
+
+.teamNames a {
+  text-decoration: none;
+  margin-left: 5px; /* space between each name */
+}

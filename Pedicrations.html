@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pediatrics - Vision X</title>
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", Arial, sans-serif;
+    }
+
+    body {
+      background: #f8f9fa; /* light neutral background */
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
+    }
+
+    /* Department container */
+    .department {
+      background: white;
+      padding: 50px 40px;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      max-width: 800px;
+      text-align: center;
+    }
+
+    /* Title */
+    .title {
+      font-size: 36px;
+      font-weight: bold;
+      color: #333;
+      margin-bottom: 40px; /* space below heading */
+    }
+
+    /* Icons row */
+    .icons {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      margin-bottom: 30px;
+      flex-wrap: wrap; /* responsive */
+    }
+
+    .icon {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .icon:hover {
+      transform: scale(1.1);
+    }
+
+    /* Description */
+    .description {
+      font-size: 18px;
+      color: #555;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+
+  <section class="department">
+    <h1 class="title">Pediatrics</h1>
+
+    <div class="icons">
+      <div class="icon"><img src="p1.jpg" alt="Pediatrics Icon 1"></div>
+      <div class="icon"><img src="p2.jpg" alt="Pediatrics Icon 2"></div>
+      <div class="icon"><img src="p3.jpg" alt="Pediatrics Icon 3"></div>
+      <div class="icon"><img src="p4.jpg" alt="Pediatrics Icon 4"></div>
+      <div class="icon"><img src="p5.jpg" alt="Pediatrics Icon 5"></div>
+    </div>
+
+    <p class="description">
+      Pediatrics is the branch of medicine that focuses on the study, diagnosis, 
+      and treatment of children under the age of 18, especially infants and young children. Pediatricians work to 
+      prevent, detect, and treat conditions such as birth defects, infections, and injuries.
+    </p>
+  </section>
+
+</body>
+</html>
