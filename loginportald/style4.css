@@ -155,20 +155,24 @@ table th, table td {
 
 /* Appointment Section */
 .content-section {
+  
   margin-top: 50px;  /* moves section lower */
   left:0px;
-  margin-left: 0px;
+  margin-left: 0px; /* adjust based on sidebar width */
   padding: 20px;
 }
 
 /* Center topbar inside appointments section */
 .center-topbar {
-  left:0;
+  
+  
  text-align: center;
   background-color: #f5f5f5; /* same as dashboard topbar */
   padding: 12px 0;
   border-radius: 8px;
   margin-bottom: 20px;
+  margin-left: 5px;
+  
 }
 /* Pending appointments orange highlight */
 .sub-card table td span {
@@ -177,10 +181,14 @@ table th, table td {
 .sub-card table td span[style*="orange"] {
   color: orange;
 }
-
+.topbar{
+   text-align: center;
+   font-size: 30px;
+}
 
 /* Center appointment content and limit width */
 .appointment-content {
+  
   max-width: 900px;   /* adjust width as needed */
   margin: 0 auto;     /* center horizontally */
 }
