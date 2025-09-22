@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Doctor Dashboard</title>
+  <link rel="stylesheet" href="style4.css">
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <div class="profile">
+      <img src="doctorsanduik.jpg" alt="Doctor">
+      <h3>Dr.Sanduk Ruit🅥</h3>
+      <p>
+        MBBS,MD<br>
+        <b>Ophthalmologist</b><br>
+        <span style="color:blue; font-weight:900; font-size:1.2em;">(VisionX)</span>
+      </p>
+ <ul class="menu">
+    <li class="active"><a href="#dashboard">Dashboard</a></li>
+    <li><a href="#appointment">Appointments</a></li>
+    <li><a href="#payments">Payments</a></li>
+    <li><a href="#profiles">Profiles</a></li>
+    <li><a href="#settings">Settings</a></li>
+    <li><a href="#logout">Logout</a></li>
+  </ul>
+
+    </div>
+    <div class="rating">
+      <h2>Rating</h2>
+      <p>4.9⭐⭐⭐⭐⭐</p>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main">
+    <div class="topbar">
+      <h2>Doctor's Dashboard</h2>
+      <input type="text" placeholder="Search..." class="search-box">
+    </div>
+
+    <!-- Stats Cards -->
+    <div class="cards">
+      <div class="card">
+        <h2>5000+</h2>
+        <p>Total Patients reached</p>
+      </div>
+      <div class="card">
+        <h2>18</h2>
+        <p>Today Patients</p>
+      </div>
+      <div class="card">
+        <h2>80</h2>
+        <p>Today Appointments</p>
+      </div>
+    </div>
+
+    <!-- Patients + Appointments -->
+    <div class="grid-2">
+      <div class="sub-card">
+        <h3>Today Appointments</h3>
+        <table>
+          <tr>
+            <th>Patient</th>
+            <th>Diagnosis</th>
+            <th>Time</th>
+          </tr>
+          <tr>
+            <td>Kapil Gautam</td>
+            <td>Health Checkup</td>
+            <td>Ongoing</td>
+          </tr>
+          <tr>
+            <td>Dipson Bhusal</td>
+            <td>Health Checkup</td>
+            <td>12:30PM</td>
+          </tr>
+          <tr>
+            <td>Prem Sagar</td>
+            <td>Report</td>
+            <td>01:00PM</td>
+          </tr>
+          <tr>
+            <td>M.Grace</td>
+            <td>Health Checkup</td>
+            <td>01:30PM</td>
+          </tr>
+        </table>
+      </div>
+      <div class="sub-card calendar">
+        <h3>Calendar<br>(2025) Sep</h3>
+        <table>
+          <tr>
+            <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td>
+          </tr>
+          <tr>
+            <td>6</td><td>7</td><td>8</td><td>9</td><td>10</td>
+          </tr>
+          <tr>
+            <td>11</td><td>12</td><td>13</td><td>14</td><td>15</td>
+          </tr>
+          <tr>
+            <td>16</td><td>17</td><td>18</td><td>19</td><td>20</td>
+          </tr>
+          <tr>
+            <td>21</td><td>22</td><td>23</td><td>24</td><td class="active">25</td>
+          </tr>
+          <tr>
+            <td>26</td><td>27</td><td>28</td><td>29</td><td>30</td>
+          </tr>
+          <tr>
+            <td>31</td><td></td><td></td><td></td><td></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <!-- Appointment Section -->
+<section id="appointment" class="content-section">
+  <!-- Centered topbar -->
+  <div class="topbar center-topbar">
+    <h2>Appointments</h2>
+  </div>
+  
+
+  <div class="appointment-content">
+    <!-- New Active Appointments -->
+    <div class="sub-card">
+      <h3>New Active Appointments</h3>
+      <table>
+        <tr>
+          <th>Patient</th>
+          <th>Diagnosis</th>
+          <th>Status</th>
+        </tr>
+        <tr>
+          <td>Amrita Sahoo</td>
+          <td>Blepharitis</td>
+          <td><span style="color:green;">Active</span></td>
+        </tr>
+        <tr>
+          <td>Pramod Reddy</td>
+          <td>Chalazion</td>
+          <td><span style="color:green;">Active</span></td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- Appointment History -->
+    <div class="sub-card" style="margin-top:20px;">
+      <h3>Appointment History</h3>
+      <table>
+        <tr>
+          <th>Patient</th>
+          <th>Diagnosis</th>
+          <th>Date</th>
+        </tr>
+        <tr>
+          <td>Rajesh Pandit</td>
+          <td>Fever</td>
+          <td>15 Dec 2024</td>
+        </tr>
+        <tr>
+          <td>Ganesh Khadka</td>
+          <td>Common Cold</td>
+          <td>10 Dec 2024</td>
+        </tr>
+        <tr>
+          <td>Resham Rokaya</td>
+          <td>Diarrhoea</td>
+          <td>09 Dec 2025</td>
+        </tr>
+        <tr>
+          <td>Arvin Thapa</td>
+          <td>Conjunctivitis</td>
+          <td>08 Dec 2025</td>
+        </tr>
+        <tr>
+          <td>Dibest Budha</td>
+          <td>Watery Eyes</td>
+          <td>07 Dec 2024</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <!-- Pending Appointments -->
+    <div class="sub-card" style="margin-top:20px;">
+      <h3>Pending Appointments</h3>
+      <table>
+        <tr>
+          <th>Patient</th>
+          <th>Diagnosis</th>
+          <th>Status</th>
+        </tr>
+        <tr>
+          <td>Rina Shrestha</td>
+          <td>Watery Eyes</td>
+          <td><span style="color:orange;">Pending</span></td>
+        </tr>
+        <tr>
+          <td>Sunil Thapa</td>
+          <td>Conjunctivitis</td>
+          <td><span style="color:orange;">Pending</span></td>
+        </tr>
+      </table>
+    </div>
+</section>
+
+
+  <script src="script4.js"></script>
+</body>
+</html>

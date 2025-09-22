@@ -24,7 +24,7 @@ body {
   width: 100%;
 }
 
-/* Login Box */
+/* Form Box */
 .form-box {
   background: white;
   padding: 40px 35px;
@@ -61,34 +61,24 @@ body {
   margin-bottom: 5px;
 }
 
-.input-group input {
+.input-group input,
+.input-group select,
+.input-group textarea {
   width: 100%;
   padding: 12px;
   border-radius: 8px;
   border: 1px solid #ccc;
   outline: none;
+  color: #333;
+  background: #fff;
   transition: border-color 0.3s, box-shadow 0.3s;
 }
 
-.input-group input:focus {
+.input-group input:focus,
+.input-group select:focus,
+.input-group textarea:focus {
   border-color: #00c6ff;
   box-shadow: 0 0 6px #00c6ff;
-}
-
-/* Forgot password */
-.options {
-  text-align: right;
-  margin-bottom: 20px;
-}
-
-.options a {
-  font-size: 13px;
-  color: #007bff;
-  text-decoration: none;
-}
-
-.options a:hover {
-  text-decoration: underline;
 }
 
 /* Button */
@@ -103,6 +93,7 @@ body {
   font-size: 16px;
   cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  margin-top: 20px;
 }
 
 .btn:hover {
@@ -118,7 +109,7 @@ body {
 }
 
 .signup-text a {
-  color: #10099e;
+  color: #2A5298;
   font-weight: bold;
   text-decoration: none;
 }
@@ -131,20 +122,4 @@ body {
 @keyframes fadeIn {
   from {opacity: 0; transform: translateY(20px);}
   to {opacity: 1; transform: translateY(0);}
-}
-
-.demo-btn {
-  padding: 20px 50px;
-  font-size: 1.3em;
-  display: inline-block;
-  background: #1c3cba;
-  color: #fff;
-  border-radius: 12px;
-  text-decoration: none;
-  margin-top: 20px;
-  transition: 0.3s;
-}
-
-.demo-btn:hover {
-  background: #163095;
 }

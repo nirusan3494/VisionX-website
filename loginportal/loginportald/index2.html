@@ -3,81 +3,126 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sign Up Doctor - Vision X</title>
+  <title>Doctor Portal - Vision X</title>
   <link rel="stylesheet" href="style2.css">
-  <script src="script2.js" defer></script>
+  <script defer>
+    document.addEventListener("DOMContentLoaded", () => {
+      // Hardcoded doctor credentials
+      const doctorEmail = "doctor@example.com";
+      const doctorPassword = "Doctor123";
+
+      // Login form
+      const loginForm = document.querySelector(".login-form");
+      if (loginForm) {
+        loginForm.addEventListener("submit", (e) => {
+          e.preventDefault();
+          const email = document.getElementById("login-email").value.trim();
+          const password = document.getElementById("login-password").value.trim();
+
+          if (email === doctorEmail && password === doctorPassword) {
+            window.location.href = "index4.html"; // redirect to dashboard
+          } else {
+            alert("Invalid credentials!");
+          }
+        });
+      }
+
+      // Signup form
+      const signupForm = document.querySelector(".signup-form");
+      if (signupForm) {
+        signupForm.addEventListener("submit", (e) => {
+          e.preventDefault();
+          alert("Doctor signup form submitted!");
+        });
+      }
+
+      // Tab switch buttons
+      const signupTab = document.getElementById("signup-tab");
+      const loginTab = document.getElementById("login-tab");
+      const signupBox = document.getElementById("signup-box");
+      const loginBox = document.getElementById("login-box");
+
+      signupTab.addEventListener("click", () => {
+        signupBox.style.display = "block";
+        loginBox.style.display = "none";
+      });
+
+      loginTab.addEventListener("click", () => {
+        signupBox.style.display = "none";
+        loginBox.style.display = "block";
+      });
+
+      // Link clicks inside forms
+      document.getElementById("go-login").addEventListener("click", (e) => {
+        e.preventDefault();
+        signupBox.style.display = "none";
+        loginBox.style.display = "block";
+      });
+
+      document.getElementById("go-signup").addEventListener("click", (e) => {
+        e.preventDefault();
+        signupBox.style.display = "block";
+        loginBox.style.display = "none";
+      });
+    });
+  </script>
 </head>
 <body>
   <div class="container">
-    <div class="form-box">
+    <!-- Tab Buttons -->
+    <div class="tab-buttons">
+      <button id="signup-tab">Sign Up</button>
+      <button id="login-tab">Login</button>
+    </div>
+
+    <!-- Signup Form -->
+    <div class="form-box" id="signup-box">
       <h1 class="title">Doctor Sign Up</h1>
       <p class="subtitle">Fill in your details to register as a <strong>Doctor</strong></p>
-
       <form action="/signup-doctor" method="POST" class="signup-form">
-        <!-- Name -->
         <div class="input-group">
           <label for="name">Full Name</label>
           <input type="text" id="name" name="name" placeholder="Enter your full name" required>
         </div>
-
-        <!-- Email -->
         <div class="input-group">
           <label for="email">Email</label>
           <input type="email" id="email" name="email" placeholder="eg: doctor@example.com" required>
         </div>
-
-        <!-- Phone -->
         <div class="input-group">
           <label for="phone">Phone Number</label>
           <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
         </div>
-
-        <!-- Age -->
         <div class="input-group">
           <label for="age">Age</label>
           <input type="number" id="age" name="age" placeholder="Enter your age" required>
         </div>
-
-        <!-- Gender -->
         <div class="input-group">
           <label>Gender</label>
           <div class="gender-options">
             <input type="radio" id="male" name="gender" value="Male" required>
             <label for="male">Male</label>
-
             <input type="radio" id="female" name="gender" value="Female">
             <label for="female">Female</label>
-
             <input type="radio" id="other" name="gender" value="Other">
             <label for="other">Other</label>
           </div>
         </div>
-
-        <!-- Address -->
         <div class="input-group">
           <label for="address">Address</label>
           <input type="text" id="address" name="address" placeholder="Enter your address" required>
         </div>
-
-        <!-- State -->
         <div class="input-group">
           <label for="state">State</label>
           <input type="text" id="state" name="state" placeholder="Enter your state" required>
         </div>
-
-        <!-- Nearby Hospital -->
         <div class="input-group">
           <label for="hospital">Nearest Government Hospital</label>
           <input type="text" id="hospital" name="hospital" placeholder="Hospital near you" required>
         </div>
-
-        <!-- Medical History -->
         <div class="input-group">
           <label for="history">Medical History (Optional)</label>
           <textarea id="history" name="history" placeholder="Any relevant medical history"></textarea>
         </div>
-
-        <!-- Blood Group -->
         <div class="input-group">
           <label for="blood">Blood Group</label>
           <select id="blood" name="blood" required>
@@ -92,18 +137,38 @@
             <option value="O-">O-</option>
           </select>
         </div>
-
-        <!-- Password -->
         <div class="input-group">
           <label for="password">Password</label>
           <input type="password" id="password" name="password" placeholder="Enter a strong password" required>
         </div>
-
-        <!-- Submit -->
         <button type="submit" class="btn">Sign Up</button>
-
-        <p class="signup-text">Already have an account? <a href="signin.html">Sign In</a></p>
+        <p class="signup-text">Already have an account? <a href="#" id="go-login">Sign In</a></p>
       </form>
+    </div>
+
+    <!-- Login Form -->
+    <div class="form-box" id="login-box" style="display:none;">
+      <h1 class="title">Doctor Login</h1>
+      <p class="subtitle">Enter your credentials to access your <strong>Dashboard</strong></p>
+      <form class="login-form">
+        <div class="input-group">
+          <label for="login-email">Email</label>
+          <input type="email" id="login-email" name="login-email" placeholder="eg: doctor@example.com" required>
+        </div>
+        <div class="input-group">
+          <label for="login-password">Password</label>
+          <input type="password" id="login-password" name="login-password" placeholder="Enter your password" required>
+        </div>
+        <button type="submit" class="btn">Login</button>
+        <p class="signup-text">Don't have an account? <a href="#" id="go-signup">Sign Up</a></p>
+      </form>
+    </div>
+
+    <!-- Demo Dashboard Button -->
+    <div style="text-align:center; margin-top:30px;">
+      <a href="index4.html" target="_blank" class="btn" style="padding:15px 40px; font-size:1.2em; display:inline-block; background:#1c3cba; color:#fff; border-radius:10px; text-decoration:none;">
+        View Demo Dashboard
+      </a>
     </div>
   </div>
 </body>

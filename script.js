@@ -102,5 +102,26 @@ function openModal(id) {
 function closeModal(id) {
   document.getElementById(id).style.display = 'none';
 }
+// Hardcoded doctor credentials
+const doctorEmail = "doctor@example.com";
+const doctorPassword = "Doctor123";
+
+document.addEventListener("DOMContentLoaded", () => {
+  const loginForm = document.querySelector(".signup-form");
+
+  loginForm.addEventListener("submit", (e) => {
+    e.preventDefault(); // <-- Prevents the default form submission
+
+    const email = document.getElementById("email").value.trim();
+    const password = document.getElementById("password").value.trim();
+
+    if (email === doctorEmail && password === doctorPassword) {
+      // Correct login → redirect to dashboard
+      window.location.href = "index4.html";
+    } else {
+      alert("Invalid credentials!"); // Only shows on wrong input
+    }
+  });
+});
 
 

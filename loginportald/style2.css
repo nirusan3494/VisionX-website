@@ -123,3 +123,27 @@ body {
   from {opacity: 0; transform: translateY(20px);}
   to {opacity: 1; transform: translateY(0);}
 }
+
+
+
+
+.demo-dash {
+  text-align: center;
+  margin-top:1200px;
+}
+
+.demo-btn {
+  padding: 10px 20px;
+  font-size: 1.3em;
+  display: inline-block;
+  background: #899ef4;
+  color: #ffffff;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: 0.3s;
+  margin-right: 0px;
+}
+
+.demo-btn:hover {
+  background: #163095;
+}

@@ -112,11 +112,11 @@ height:auto;
 #login-btn {
   position: absolute;
   top: 25px;     /* distance from top of box */
-  right: 130px; /* distance from right edge */
+  right: 30px; /* distance from right edge */
   border: solid black 2px;
   border-radius: 88px;
   padding: 7px 10px;
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(126, 177, 239);
 }
 #login-btn > .loginimage {
   width: 24px;          /* set your desired width */
@@ -144,27 +144,9 @@ height:auto;
   display: block;
 }
 
-#signup-btn {
-  position: absolute;
-  top: 29px;
-  right: 20px;
-  border: solid black 2px;
-border-radius: 88px;
-padding: 7px 9px;
-background-color: rgb(255, 255, 255);
 
-}
-#signup-btn:hover {
-  background-color: rgb(167, 228, 232); /* background color changes */
-  color: white;            /* text color changes */
-  border-color: black;     /* optional: border can change */
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2); /* subtle shadow on hover */
-  cursor: pointer; 
-  
-}
-#signup-btn:hover .account-dropdown {
-  display: block;
-}
+
+
 
 
 /* Dropdown menu styling (same for both) */
