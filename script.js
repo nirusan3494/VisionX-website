@@ -124,4 +124,35 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+function toggleEmergency() {
+  const submenu = document.querySelector(".emergency-submenu");
+  submenu.style.display = submenu.style.display === "block" ? "none" : "block";
+}
+let timer;
+
+const contactBtn = document.querySelector(".contact");
+const submenu = document.querySelector(".emergency-submenu");
+
+contactBtn.addEventListener("mouseenter", () => {
+  clearTimeout(timer);          // cancel any previous hide timer
+  submenu.style.display = "block";
+});
+
+contactBtn.addEventListener("mouseleave", () => {
+  timer = setTimeout(() => {    // hide after 2 seconds
+    submenu.style.display = "none";
+  }, 2000);
+});
+
+// Optional: keep submenu visible if hovered
+submenu.addEventListener("mouseenter", () => {
+  clearTimeout(timer);
+});
+
+submenu.addEventListener("mouseleave", () => {
+  timer = setTimeout(() => {
+    submenu.style.display = "none";
+  }, 2000);
+});
+
 
