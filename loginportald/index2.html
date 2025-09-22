@@ -6,11 +6,12 @@
   <title>Doctor Portal - Vision X</title>
   <link rel="stylesheet" href="style2.css">
   <script defer>
-    // Hardcoded doctor credentials for login
-    const doctorEmail = "doctor@example.com";
-    const doctorPassword = "Doctor123";
-
     document.addEventListener("DOMContentLoaded", () => {
+      // Hardcoded doctor credentials
+      const doctorEmail = "doctor@example.com";
+      const doctorPassword = "Doctor123";
+
+      // Login form
       const loginForm = document.querySelector(".login-form");
       if (loginForm) {
         loginForm.addEventListener("submit", (e) => {
@@ -26,6 +27,7 @@
         });
       }
 
+      // Signup form
       const signupForm = document.querySelector(".signup-form");
       if (signupForm) {
         signupForm.addEventListener("submit", (e) => {
@@ -34,7 +36,7 @@
         });
       }
 
-      // Tab switch functionality
+      // Tab switch buttons
       const signupTab = document.getElementById("signup-tab");
       const loginTab = document.getElementById("login-tab");
       const signupBox = document.getElementById("signup-box");
@@ -49,18 +51,34 @@
         signupBox.style.display = "none";
         loginBox.style.display = "block";
       });
+
+      // Link clicks inside forms
+      document.getElementById("go-login").addEventListener("click", (e) => {
+        e.preventDefault();
+        signupBox.style.display = "none";
+        loginBox.style.display = "block";
+      });
+
+      document.getElementById("go-signup").addEventListener("click", (e) => {
+        e.preventDefault();
+        signupBox.style.display = "block";
+        loginBox.style.display = "none";
+      });
     });
   </script>
 </head>
 <body>
   <div class="container">
-    
+    <!-- Tab Buttons -->
+    <div class="tab-buttons">
+      <button id="signup-tab">Sign Up</button>
+      <button id="login-tab">Login</button>
+    </div>
 
     <!-- Signup Form -->
     <div class="form-box" id="signup-box">
       <h1 class="title">Doctor Sign Up</h1>
       <p class="subtitle">Fill in your details to register as a <strong>Doctor</strong></p>
-
       <form action="/signup-doctor" method="POST" class="signup-form">
         <div class="input-group">
           <label for="name">Full Name</label>
@@ -132,7 +150,6 @@
     <div class="form-box" id="login-box" style="display:none;">
       <h1 class="title">Doctor Login</h1>
       <p class="subtitle">Enter your credentials to access your <strong>Dashboard</strong></p>
-
       <form class="login-form">
         <div class="input-group">
           <label for="login-email">Email</label>
@@ -146,13 +163,13 @@
         <p class="signup-text">Don't have an account? <a href="#" id="go-signup">Sign Up</a></p>
       </form>
     </div>
-  </div>
-  <!-- Demo Dashboard Button -->
-<div class="demo-dash">
-  <a href="doctorsdashb/index4.html" target="_blank" class="demo-btn">
-    View Demo Dashboard
-  </a>
-</div>
 
+    <!-- Demo Dashboard Button -->
+    <div style="text-align:center; margin-top:30px;">
+      <a href="index4.html" target="_blank" class="btn" style="padding:15px 40px; font-size:1.2em; display:inline-block; background:#1c3cba; color:#fff; border-radius:10px; text-decoration:none;">
+        View Demo Dashboard
+      </a>
+    </div>
+  </div>
 </body>
 </html>

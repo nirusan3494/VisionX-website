@@ -1,0 +1,179 @@
+/* Sidebar always visible */
+.sidebar {
+  width: 235px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  background-color: #cbd6ee;
+  color: #060000;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  box-shadow: 2px 0 8px rgba(0,0,0,0.3);
+  border-radius: 0 10px 10px 0;
+}
+
+.sidebar .profile {
+  text-align: center;
+}
+
+.sidebar .profile img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+  border: 2px solid #4a90e2;
+}
+
+.sidebar .profile h3 {
+  margin: 5px 0;
+  font-size: 1.2em;
+}
+
+.sidebar .profile p {
+  font-size: 0.9em;
+  line-height: 1.4;
+}
+
+.sidebar .menu {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.sidebar .menu li {
+  margin: 12px 0;
+}
+
+.sidebar .menu li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  display: block;
+  padding: 8px 15px;
+  border-radius: 8px;
+  transition: background 0.3s;
+}
+
+.sidebar .menu li.active a,
+.sidebar .menu li a:hover {
+  background-color: #4a90e2;
+  color: #fff;
+}
+
+.sidebar .rating {
+  text-align: center;
+  background-color: #2a2a2a;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+/* Main content compressed */
+.main {
+  margin-left:250px; /* leave space for sidebar */
+  padding: 20px;
+}
+.topbar{
+  margin-bottom: 5px;
+  margin-top: 5px;
+  margin-left: 310px;
+  font-size: 30px;
+}
+
+/* Cards */
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.card {
+  flex: 1 1 30%;
+  background-color: #f1f1f1;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: scale(1.03);
+}
+
+/* Symptom checker button */
+.symptom-checker {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.checker-btn {
+  background-color: #ff4d4d;
+  color: white;
+  padding: 12px 25px;
+  font-size: 1.2em;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.checker-btn:hover {
+  background-color: #e60000;
+}
+
+/* Sub-cards and tables */
+.sub-card {
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.sub-card table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.sub-card th, .sub-card td {
+  border: 1px solid #ddd;
+  padding: 6px;
+}
+
+.sub-card th {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.sub-card td span {
+  font-weight: bold;
+}
+
+/* Topbar */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.topbar input.search-box {
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+/* Set background color */
+body {
+  background-color: #c2eff7; /* light gray */
+  /* or a gradient */
+  /* background: linear-gradient(to right, #f5f7fa, #c3cfe2); */
+}
+
+/* Optional: set background image */
+body {
+  background-image: url('path/to/your/image.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}

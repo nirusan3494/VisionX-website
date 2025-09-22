@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Patient Dashboard</title>
+  <link rel="stylesheet" href="style5.css">
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <div class="profile">
+      <img src="patient.jpg" alt="Patient">
+      <h3>Saugat Malla</h3>
+      <p>
+        Age: 25<br>
+        <b>Patient</b><br>
+        <span style="color:blue; font-weight:900; font-size:1.2em;">(VisionX)</span>
+      </p>
+
+      <ul class="menu">
+        <li class="active"><a href="#dashboard">Dashboard</a></li>
+        <li><a href="#appointments">My Routine Appointments</a></li>
+        <li><a href="#profiles">Profiles</a></li>
+        <li><a href="#settings">Settings</a></li>
+        <li><a href="#logout">Logout</a></li>
+      </ul>
+    </div>
+
+    <div class="rating">
+      <h2>My Health Rating</h2>
+      <p>4.5⭐⭐⭐⭐☆</p>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main">
+    <div class="topbar">
+      <h2>Patient Dashboard</h2>
+      <input type="text" placeholder="Search..." class="search-box">
+    </div>
+
+    <!-- Dashboard Section -->
+    <section id="dashboard">
+      <div class="cards">
+        <div class="card">
+          <h2>Pharmacy Near Me</h2>
+          <p>Find nearby pharmacies quickly</p>
+        </div>
+        <div class="card">
+          <h2>Ongoing Treatment</h2>
+          <p>View your active treatments</p>
+        </div>
+        <div class="card">
+          <h2>Treatment History</h2>
+          <p>Check past treatments and prescriptions</p>
+        </div>
+        <div class="card">
+          <h2>Today's Appointments</h2>
+          <p>See your schedule for today</p>
+        </div>
+        <div class="card">
+          <h2>Calendar</h2>
+          <p>Plan your medical visits</p>
+        </div>
+        <div class="card">
+          <h2>My Medical Condition</h2>
+          <p>Notes and records</p>
+        </div>
+      </div>
+
+      <div class="symptom-checker">
+        <button class="checker-btn">Symptom Checker</button>
+      </div>
+    </section>
+
+    <!-- Routine Appointments Section -->
+    <section id="appointments" class="content-section">
+      <div class="topbar center-topbar">
+        <h2>My Appointments</h2>
+      </div>
+
+      <div class="appointment-content">
+        <div class="sub-card">
+          <h3>Upcoming Appointments</h3>
+          <table>
+            <tr>
+              <th>Doctor</th>
+              <th>Specialization</th>
+              <th>Date</th>
+              <th>Status</th>
+            </tr>
+            <tr>
+              <td>Dr. Sanduk Ruit</td>
+              <td>Ophthalmologist</td>
+              <td>25 Sep 2025</td>
+              <td><span style="color:green;">Confirmed</span></td>
+            </tr>
+            <tr>
+              <td>Dr. Priya Sharma</td>
+              <td>Dermatologist</td>
+              <td>26 Sep 2025</td>
+              <td><span style="color:orange;">Pending</span></td>
+            </tr>
+            <tr>
+              <td>Dr. Ramit Reddy</td>
+              <td>Neurologist</td>
+              <td>30 Sep 2025</td>
+              <td><span style="color:orange;">Pending</span></td>
+            </tr>
+          </table>
+        </div>
+
+        <div class="sub-card" style="margin-top:20px;">
+          <h3>Treatment History</h3>
+          <table>
+            <tr>
+              <th>Doctor</th>
+              <th>Diagnosis</th>
+              <th>Date</th>
+            </tr>
+            <tr>
+              <td>Dr. Naresh Trehan</td>
+      <td>Cardiovascular & Cardiothoracic Surgeon</td>
+      <td>15 Aug 2025</td>
+    </tr>
+    <tr>
+      <td>Dr. Ashok Seth</td>
+      <td>Cardiologist</td>
+      <td>10 Aug 2025</td>
+    </tr>
+    <tr>
+      <td>Dr. Rahil Chaudhary</td>
+      <td>Ophthalmologist</td>
+      <td>05 Aug 2025</td>
+    </tr>
+    <tr>
+      <td>Dr. Devi Prasad Shetty</td>
+      <td>Cardiac Surgeon</td>
+      <td>01 Aug 2025</td>
+    </tr>
+    <tr>
+      <td>Dr. Naresh Gupta</td>
+      <td>Orthopedic Surgeon</td>
+      <td>28 Jul 2025</td>
+    </tr>
+          </table>
+        </div>
+
+       <div class="sub-card" style="margin-top:20px;">
+  <h3>My Medical Condition</h3>
+  <p>
+    Name: Saugat Malla<br>
+    Age: 40<br>
+    Gender: Male<br>
+    Current Health Issues: Mild hypertension and occasional migraine headaches.<br>
+    Medications: Prescribed beta-blockers for blood pressure and pain relief as needed for migraines.<br>
+    Allergies: No known drug allergies.<br>
+    Lifestyle Notes: Regular exercise three times a week and maintains a balanced diet.<br>
+    Observations: Blood pressure monitored daily; migraine episodes occur mostly during high-stress periods.<br>
+    Recommendations: Continue current medication, avoid excessive stress, and maintain routine health checkups.<br>
+    Additional Notes: Follow-up appointment scheduled after 1 month for re-evaluation of blood pressure control.
+  </p>
+</div>
+
+      </div>
+    </section>
+  </div>
+
+</body>
+</html>

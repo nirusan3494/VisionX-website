@@ -125,3 +125,31 @@ h2 {
   from {opacity: 0; transform: translateY(20px);}
   to {opacity: 1; transform: translateY(0);}
 }
+
+.demo-dash {
+  top:1100px;
+  position: absolute;      /* position relative to window */
+  bottom: 30px;            /* distance from bottom of page */
+  right: 20px;             /* touches right edge, adjust if needed */
+  text-align: right;
+}
+
+.demo-dash .demo-btn {
+  display: inline-block;
+  background: linear-gradient(135deg, #4a90e2, #357ABD);
+  color: white;
+  font-size: 1.3em;
+  font-weight: 700;
+  padding: 15px 50px;
+  border-radius: 12px;
+  text-decoration: none;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+}
+
+.demo-dash .demo-btn:hover {
+  background: linear-gradient(135deg, #357ABD, #4a90e2);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
