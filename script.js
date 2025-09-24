@@ -1,4 +1,4 @@
-// Scroll hide/show for contact button
+ 
 let lastScroll = 0;
 const btn = document.querySelector('.contact');
 
@@ -9,7 +9,7 @@ window.addEventListener('scroll', () => {
   lastScroll = currentScroll;
 });
 
-// Main translations for text
+ 
 const translations = {
   en: {
     signin: "sign-in/login",
@@ -53,10 +53,10 @@ const translations = {
   }
 };
 
-// Language selector
+ 
 const langSelect = document.querySelector(".lang-btn");
 
-// Change language function
+ 
 function changeLanguage(lang) {
   document.querySelectorAll("[data-translate]").forEach(el => {
     const key = el.getAttribute("data-translate");
@@ -65,31 +65,31 @@ function changeLanguage(lang) {
   localStorage.setItem("selectedLang", lang);
 }
 
-// Load saved language or default
+ 
 const savedLang = localStorage.getItem("selectedLang") || "en";
 langSelect.value = savedLang;
 changeLanguage(savedLang);
 
-// Listen for changes
+ 
 langSelect.addEventListener("change", (e) => {
   changeLanguage(e.target.value);
 });
 
-// Login dropdown
+ 
 document.getElementById('login-btn').addEventListener('click', function(e){
   e.stopPropagation();
   const dropdown = document.getElementById('login-dropdown');
   dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
 });
 
-// Signup dropdown
+ 
 document.getElementById('signup-btn').addEventListener('click', function(e){
   e.stopPropagation();
   const dropdown = document.getElementById('signup-dropdown');
   dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
 });
 
-// Close both dropdowns if clicked outside
+ 
 window.addEventListener('click', function(){
   document.getElementById('login-dropdown').style.display = 'none';
   document.getElementById('signup-dropdown').style.display = 'none';
@@ -102,7 +102,7 @@ function openModal(id) {
 function closeModal(id) {
   document.getElementById(id).style.display = 'none';
 }
-// Hardcoded doctor credentials
+ 
 const doctorEmail = "doctor@example.com";
 const doctorPassword = "Doctor123";
 
@@ -110,16 +110,16 @@ document.addEventListener("DOMContentLoaded", () => {
   const loginForm = document.querySelector(".signup-form");
 
   loginForm.addEventListener("submit", (e) => {
-    e.preventDefault(); // <-- Prevents the default form submission
+    e.preventDefault();  
 
     const email = document.getElementById("email").value.trim();
     const password = document.getElementById("password").value.trim();
 
     if (email === doctorEmail && password === doctorPassword) {
-      // Correct login → redirect to dashboard
+       
       window.location.href = "index4.html";
     } else {
-      alert("Invalid credentials!"); // Only shows on wrong input
+      alert("Invalid credentials!");  
     }
   });
 });
@@ -134,17 +134,17 @@ const contactBtn = document.querySelector(".contact");
 const submenu = document.querySelector(".emergency-submenu");
 
 contactBtn.addEventListener("mouseenter", () => {
-  clearTimeout(timer);          // cancel any previous hide timer
+  clearTimeout(timer);           
   submenu.style.display = "block";
 });
 
 contactBtn.addEventListener("mouseleave", () => {
-  timer = setTimeout(() => {    // hide after 2 seconds
+  timer = setTimeout(() => {     
     submenu.style.display = "none";
   }, 2000);
 });
 
-// Optional: keep submenu visible if hovered
+ 
 submenu.addEventListener("mouseenter", () => {
   clearTimeout(timer);
 });

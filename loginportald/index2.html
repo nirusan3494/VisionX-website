@@ -7,11 +7,11 @@
   <link rel="stylesheet" href="style2.css">
   <script defer>
     document.addEventListener("DOMContentLoaded", () => {
-      // Hardcoded doctor credentials
+       
       const doctorEmail = "doctor@example.com";
       const doctorPassword = "Doctor123";
 
-      // Login form
+       
       const loginForm = document.querySelector(".login-form");
       if (loginForm) {
         loginForm.addEventListener("submit", (e) => {
@@ -20,14 +20,13 @@
           const password = document.getElementById("login-password").value.trim();
 
           if (email === doctorEmail && password === doctorPassword) {
-            window.location.href = "index4.html"; // redirect to dashboard
+            window.location.href = "index4.html";  
           } else {
             alert("Invalid credentials!");
           }
         });
       }
-
-      // Signup form
+ 
       const signupForm = document.querySelector(".signup-form");
       if (signupForm) {
         signupForm.addEventListener("submit", (e) => {
@@ -36,7 +35,7 @@
         });
       }
 
-      // Tab switch buttons
+      
       const signupTab = document.getElementById("signup-tab");
       const loginTab = document.getElementById("login-tab");
       const signupBox = document.getElementById("signup-box");
@@ -52,7 +51,7 @@
         loginBox.style.display = "block";
       });
 
-      // Link clicks inside forms
+      
       document.getElementById("go-login").addEventListener("click", (e) => {
         e.preventDefault();
         signupBox.style.display = "none";
@@ -72,7 +71,7 @@
     
     
 
-    <!-- Signup Form -->
+    
     <div class="form-box" id="signup-box">
       <h1 class="title">Doctor Sign Up</h1>
       <p class="subtitle">Fill in your details to register as a <strong>Doctor</strong></p>
@@ -142,8 +141,7 @@
         <p class="signup-text">Already have an account? <a href="#" id="go-login">Sign In</a></p>
       </form>
     </div>
-
-    <!-- Login Form -->
+ 
     <div class="form-box" id="login-box" style="display:none;">
       <h1 class="title">Doctor Login</h1>
       <p class="subtitle">Enter your credentials to access your <strong>Dashboard</strong></p>
@@ -161,9 +159,9 @@
       </form>
     </div>
 
-    <!-- Demo Dashboard Button -->
+     
     <div style="text-align:center; margin-top:30px;">
-      <a href="index4.html" target="_blank" class="btn" style="padding:15px 40px; font-size:1.2em; display:inline-block; background:#1c3cba; color:#fff; border-radius:10px; text-decoration:none;">
+      <a href="index4.html" target="_blank" class="btn" style="padding:15px 40px; font-size:1.2em; display:inline-block; background:#1c3cba; color:#fff; border-radius:10px; text-decoration:none;margin-top: 1150px;">
         View Demo Dashboard
       </a>
     </div>

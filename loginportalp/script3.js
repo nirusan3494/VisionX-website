@@ -1,4 +1,4 @@
-// Example: Check password length or other validations
+ 
 document.getElementById('patient-signup-form').addEventListener('submit', function(e){
   const name = document.getElementById('name').value.trim();
   if(name.length < 3){

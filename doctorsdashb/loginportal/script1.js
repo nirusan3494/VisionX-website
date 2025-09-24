@@ -1,7 +1,5 @@
-// signin.js
-
-// Example: simple alert when form is submitted
+ 
 document.querySelector('.login-form').addEventListener('submit', function(e) {
-  e.preventDefault(); // Prevent actual form submission
+  e.preventDefault();  
   alert('Login form submitted!');
 });
