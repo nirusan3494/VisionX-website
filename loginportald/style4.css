@@ -1,24 +1,29 @@
+/* -------------------- GLOBAL -------------------- */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Inter', sans-serif;
 }
+html {
+  scroll-behavior: smooth;
+}
 body {
   background: #aeecec;
   display: flex;
 }
 
- 
+/* -------------------- SIDEBAR -------------------- */
 .sidebar {
-  position:fixed;
-  overflow: hidden;
-  z-index:1000;
+  position: fixed;
   width: 250px;
+  height: 100vh;
   background: #f7c7c7;
   padding: 20px;
-  height: 100vh;
+  overflow: hidden;
   box-shadow: 2px 0 10px rgba(0,0,0,0.05);
+  z-index: 1000;
+  transition: width 0.3s;
 }
 .profile {
   text-align: center;
@@ -30,13 +35,8 @@ body {
   border-radius: 50%;
   margin-bottom: 10px;
 }
-.profile h3 {
-  font-size: 18px;
-}
-.profile p {
-  font-size: 12px;
-  color: rgb(96, 79, 79);
-}
+.profile h3 { font-size: 18px; }
+.profile p { font-size: 12px; color: rgb(96,79,79); }
 .menu {
   list-style: none;
   margin-top: 20px;
@@ -48,29 +48,29 @@ body {
   cursor: pointer;
   transition: 0.3s;
 }
-.menu li:hover, .menu li.active {
-  background: #1c3cba;
-  color: #fff;
-}
+.menu li:hover, .menu li.active { background: #1c3cba; color: #fff; }
+.menu li a { text-decoration: none; color: inherit; display: block; width: 100%; height: 100%; }
 
- 
+/* -------------------- MAIN CONTENT -------------------- */
 .main {
   margin-left: 250px;
-  left :250px;
   flex: 1;
   padding: 20px;
 }
 .topbar {
- margin-left: 250px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  text-align: center;
+  font-size: 30px;
 }
 .search-box {
   padding: 8px 12px;
   border-radius: 8px;
   border: 1px solid #ccc;
 }
+
+/* -------------------- CARDS -------------------- */
 .cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -83,27 +83,23 @@ body {
   border-radius: 15px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
-.card h2 {
-  font-size: 28px;
-  margin-bottom: 5px;
-}
-.card p {
-  color: gray;
-}
+.card h2 { font-size: 28px; margin-bottom: 5px; }
+.card p { color: gray; }
+
+/* -------------------- RATING -------------------- */
 .rating {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 10px;
   margin: 10px 0;
-}
-.rating {
   font-size: 14px;
   background: #d0cfc6;
   padding: 9px;
   border-radius: 15px;
   box-shadow: 0 9px 18px rgba(0,0,0,0.05);
 }
- 
+
+/* -------------------- GRID 2 -------------------- */
 .grid-2 {
   display: grid;
   grid-template-columns: 2fr 1fr;
@@ -116,8 +112,10 @@ body {
   padding: 20px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
+.sub-card table td span { font-weight: 600; }
+.sub-card table td span[style*="orange"] { color: orange; }
 
- 
+/* -------------------- TABLE -------------------- */
 table {
   width: 100%;
   border-collapse: collapse;
@@ -129,76 +127,38 @@ table th, table td {
   border-bottom: 1px solid #f0f0f0;
 }
 
- 
+/* -------------------- CALENDAR -------------------- */
 .calendar {
   text-align: center;
 }
-.calendar table {
-  width: 100%;
-}
+.calendar table { width: 100%; }
 .calendar td {
   padding: 10px;
   cursor: pointer;
   border-radius: 5px;
 }
-.calendar td.active {
-  background: #4a6cf7;
-  color: #fff;
-}
-.menu li a {
-  text-decoration: none;
-  color: inherit;
-  display: block;
-  width: 100%;
-  height: 100%;
-}
+.calendar td.active { background: #4a6cf7; color: #fff; }
 
- 
-.content-section {
-  
-  margin-top: 50px;  
-  left:0px;
-  margin-left: 0px;  
-  padding: 20px;
-}
-
- 
+/* -------------------- CONTENT SECTIONS -------------------- */
+.content-section { margin-top: 50px; padding: 20px; }
 .center-topbar {
-  
-  
- text-align: center;
-  background-color: #f5f5f5;  
+  text-align: center;
+  background-color: #f5f5f5;
   padding: 12px 0;
   border-radius: 8px;
   margin-bottom: 20px;
   margin-left: 5px;
-  
 }
- 
-.sub-card table td span {
-  font-weight: 600;
-}
-.sub-card table td span[style*="orange"] {
-  color: orange;
-}
-.topbar{
-   text-align: center;
-   font-size: 30px;
-}
-
- 
 .appointment-content {
-  
-  max-width: 900px;    
-  margin: 0 auto;      
+  max-width: 900px;
+  margin: 0 auto;
 }
+#appointment { scroll-margin-top: 80px; }
 
- 
-html {
-  scroll-behavior: smooth;
-}
-
- 
-#appointment {
-  scroll-margin-top: 80px;  
+/* -------------------- RESPONSIVE -------------------- */
+@media (max-width: 768px) {
+  .sidebar { width: 60px; padding: 10px; }
+  .main { margin-left: 60px; padding: 10px; }
+  .cards { grid-template-columns: 1fr; gap: 10px; }
+  .topbar { flex-direction: column; font-size: 20px; }
 }

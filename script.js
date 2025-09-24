@@ -156,3 +156,22 @@ submenu.addEventListener("mouseleave", () => {
 });
 
 
+
+
+
+
+const loginContainer = document.querySelector('.login-dropdown-container');
+const dropdown = document.querySelector('.login-dropdown-container .dropdown-content');
+
+loginContainer.addEventListener('click', () => {
+  dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+});
+
+// Optional: close dropdown when clicking outside
+document.addEventListener('click', (e) => {
+  if (!loginContainer.contains(e.target)) {
+    dropdown.style.display = 'none';
+  }
+});
+
+

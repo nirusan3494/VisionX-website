@@ -1,11 +1,11 @@
  
+/* Global Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
- 
 body {
   font-family: "Segoe UI", Arial, sans-serif;
   background: linear-gradient(120deg, #def9f9, #def9f9);
@@ -16,7 +16,6 @@ body {
   padding-top: 60px;
 }
 
- 
 .container {
   display: flex;
   justify-content: center;
@@ -24,7 +23,6 @@ body {
   width: 100%;
 }
 
- 
 .form-box {
   background: white;
   padding: 40px 35px;
@@ -35,7 +33,6 @@ body {
   animation: fadeIn 1s ease-in-out;
 }
 
- 
 .title {
   font-size: 28px;
   margin-bottom: 10px;
@@ -48,7 +45,6 @@ body {
   color: #555;
 }
 
- 
 .input-group {
   text-align: left;
   margin-bottom: 20px;
@@ -75,7 +71,6 @@ body {
   box-shadow: 0 0 6px #00c6ff;
 }
 
- 
 .options {
   text-align: right;
   margin-bottom: 20px;
@@ -91,7 +86,6 @@ body {
   text-decoration: underline;
 }
 
- 
 .btn {
   width: 100%;
   padding: 12px;
@@ -110,7 +104,6 @@ body {
   box-shadow: 0px 6px 15px rgba(0,0,0,0.2);
 }
 
- 
 .signup-text {
   margin-top: 20px;
   font-size: 14px;
@@ -127,8 +120,37 @@ body {
   text-decoration: underline;
 }
 
- 
 @keyframes fadeIn {
   from {opacity: 0; transform: translateY(20px);}
   to {opacity: 1; transform: translateY(0);}
+}
+
+/* Mobile responsiveness */
+@media (max-width: 480px) {
+  .form-box {
+    width: 90%;           /* take most of the mobile width */
+    padding: 30px 20px;   /* smaller padding */
+  }
+
+  .title {
+    font-size: 24px;
+  }
+
+  .subtitle {
+    font-size: 13px;
+    margin-bottom: 20px;
+  }
+
+  .input-group input {
+    padding: 10px;
+  }
+
+  .btn {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .signup-text {
+    font-size: 13px;
+  }
 }

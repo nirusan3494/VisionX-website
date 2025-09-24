@@ -1,4 +1,16 @@
- 
+/* -------------------- GLOBAL -------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+body {
+  background-color: #c2eff7;
+  display: flex;
+}
+
+/* -------------------- SIDEBAR -------------------- */
 .sidebar {
   width: 235px;
   position: fixed;
@@ -13,12 +25,11 @@
   padding: 20px;
   box-shadow: 2px 0 8px rgba(0,0,0,0.3);
   border-radius: 0 10px 10px 0;
+  transition: width 0.3s ease;
 }
-
 .sidebar .profile {
   text-align: center;
 }
-
 .sidebar .profile img {
   width: 80px;
   height: 80px;
@@ -27,27 +38,14 @@
   margin-bottom: 10px;
   border: 2px solid #4a90e2;
 }
-
-.sidebar .profile h3 {
-  margin: 5px 0;
-  font-size: 1.2em;
-}
-
-.sidebar .profile p {
-  font-size: 0.9em;
-  line-height: 1.4;
-}
-
+.sidebar .profile h3 { margin: 5px 0; font-size: 1.2em; }
+.sidebar .profile p { font-size: 0.9em; line-height: 1.4; }
 .sidebar .menu {
   list-style: none;
   padding: 0;
   margin-top: 20px;
 }
-
-.sidebar .menu li {
-  margin: 12px 0;
-}
-
+.sidebar .menu li { margin: 12px 0; }
 .sidebar .menu li a {
   text-decoration: none;
   color: #fff;
@@ -57,13 +55,8 @@
   border-radius: 8px;
   transition: background 0.3s;
 }
-
 .sidebar .menu li.active a,
-.sidebar .menu li a:hover {
-  background-color: #4a90e2;
-  color: #fff;
-}
-
+.sidebar .menu li a:hover { background-color: #4a90e2; color: #fff; }
 .sidebar .rating {
   text-align: center;
   background-color: #2a2a2a;
@@ -71,44 +64,45 @@
   border-radius: 10px;
 }
 
- 
+/* -------------------- MAIN CONTENT -------------------- */
 .main {
-  margin-left:250px;  
+  margin-left: 250px;
   padding: 20px;
-}
-.topbar{
-  margin-bottom: 5px;
-  margin-top: 5px;
-  margin-left: 310px;
-  font-size: 30px;
+  flex: 1;
 }
 
- 
+/* -------------------- TOPBAR -------------------- */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 5px 0 15px 310px;
+  font-size: 30px;
+}
+.topbar input.search-box {
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+/* -------------------- CARDS -------------------- */
 .cards {
   display: flex;
   flex-wrap: wrap;
   gap: 15px;
 }
-
 .card {
   flex: 1 1 30%;
   background-color: #f1f1f1;
   padding: 15px;
   border-radius: 10px;
   text-align: center;
-  transition: transform 0.2s;
+  transition: transform 0.2s ease;
 }
+.card:hover { transform: scale(1.03); }
 
-.card:hover {
-  transform: scale(1.03);
-}
-
- 
-.symptom-checker {
-  text-align: center;
-  margin-top: 20px;
-}
-
+/* -------------------- SYMPTOM CHECKER -------------------- */
+.symptom-checker { text-align: center; margin-top: 20px; }
 .checker-btn {
   background-color: #ff4d4d;
   color: white;
@@ -117,54 +111,26 @@
   border: none;
   border-radius: 10px;
   cursor: pointer;
+  transition: background 0.3s;
 }
+.checker-btn:hover { background-color: #e60000; }
 
-.checker-btn:hover {
-  background-color: #e60000;
-}
-
- 
+/* -------------------- SUB-CARDS / TABLE -------------------- */
 .sub-card {
   background-color: #f9f9f9;
   padding: 15px;
   border-radius: 8px;
   margin-bottom: 20px;
 }
+.sub-card table { width: 100%; border-collapse: collapse; }
+.sub-card th, .sub-card td { border: 1px solid #ddd; padding: 6px; }
+.sub-card th { background-color: #4CAF50; color: white; }
+.sub-card td span { font-weight: bold; }
 
-.sub-card table {
-  width: 100%;
-  border-collapse: collapse;
+/* -------------------- RESPONSIVENESS -------------------- */
+@media (max-width: 768px) {
+  .sidebar { width: 60px; padding: 10px; }
+  .main { margin-left: 60px; padding: 10px; }
+  .cards { flex-direction: column; gap: 10px; }
+  .topbar { flex-direction: column; font-size: 20px; margin-left: 0; }
 }
-
-.sub-card th, .sub-card td {
-  border: 1px solid #ddd;
-  padding: 6px;
-}
-
-.sub-card th {
-  background-color: #4CAF50;
-  color: white;
-}
-
-.sub-card td span {
-  font-weight: bold;
-}
-
- 
-.topbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 15px;
-}
-
-.topbar input.search-box {
-  padding: 5px 10px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-}
- 
-body {
-  background-color: #c2eff7;  
-}
-

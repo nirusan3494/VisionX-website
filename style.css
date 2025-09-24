@@ -1,116 +1,340 @@
-
+/* ------------------ BASE STYLES (DESKTOP) ------------------ */
 html, body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-  
   width: 100%;
-
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  margin:0;
+  font-family: Arial, sans-serif;
 }
 
+/* ------------------ TABLETS (max-width: 1024px) ------------------ */
+@media (max-width: 1024px) {
+  html, body {
+    font-size: 15px;
+    min-height: auto;
+    padding: 0 10px;
+  }
+}
+
+/* ------------------ LARGE PHONES / SMALL TABLETS (max-width: 768px) ------------------ */
+@media (max-width: 768px) {
+  html, body {
+    font-size: 14px;
+    padding: 0 8px;
+  }
+}
+
+/* ------------------ PHONES (max-width: 480px) ------------------ */
+@media (max-width: 480px) {
+  html, body {
+    font-size: 12px;
+    padding: 0 5px;
+  }
+}
+/* Desktop styles (keep as-is) */
 .containerX {
-  max-width: 1200px;   
-  width: 90%;          
-  margin: 0 auto;      
+  max-width: 1200px;
+  width: 90%;
+  margin: 0 auto;
 }
 
-.box {
-  position:fixed;
-  z-index: 1000;
-  width: 100%;         
-  height: 70px;         
- top:0px;
- left:0px;
- border-radius: 0px 0px 8px 8px;    
-  background-color: #def9f9;  
+/* Tablets / small screens */
+@media (max-width: 768px) {
+  .containerX {
+    width: 95%;        /* slightly wider to fill smaller screen */
+    padding: 0 10px;   /* prevent content touching edges */
+  }
 }
+
+/* Phones */
+@media (max-width: 480px) {
+  .containerX {
+    width: 100%;       /* full width for small phones */
+    padding: 0 5px;    /* small padding for breathing space */
+  }
+}
+/* Desktop styles (keep as-is) */
+.box {
+  position: fixed;
+  z-index: 1000;
+  width: 100%;
+  height: 70px;
+  top: 0px;
+  left: 0px;
+  border-radius: 0px 0px 8px 8px;
+  background-color: #def9f9;
+}
+
+/* Tablets / small screens */
+@media (max-width: 768px) {
+  .box {
+    height: 60px; /* slightly smaller */
+  }
+}
+
+/* Phones */
+@media (max-width: 480px) {
+  .box {
+    height: 50px; /* compact for small phones */
+  }
+}
+/* Desktop styles (keep as-is) */
 .lang-btn {
-  position: absolute; 
-  top: 28px;     
-  left: 16px;    
+  position: absolute;
+  top: 28px;
+  left: 16px;
   width: 90px;
-  padding: 8px 30px 8px 12px;  
+  padding: 8px 30px 8px 12px;
   border: 1px solid #ccc;
   border-radius: 6px;
-  background: rgb(255, 255, 255)
-   
-    url('downarrow.png') no-repeat right 8px center;  
-  background-size: 16px, 10px;  
-  appearance: none;  
+  background: rgb(255, 255, 255) url('downarrow.png') no-repeat right 8px center;
+  background-size: 16px, 10px;
+  appearance: none;
   cursor: pointer;
   font-size: 14px;
 }
-#signup-btn .loginimage {
-  width: 20px;        
-  height: 20px;       
-  object-fit: contain;  
-  vertical-align: middle;  
-  margin-left: 6px;    
-  transition: transform 0.3s ease;  
+
+/* Tablets / small screens */
+@media (max-width: 768px) {
+  .lang-btn {
+    top: 20px;
+    left: 12px;
+    width: 80px;
+    padding: 6px 25px 6px 10px;
+    font-size: 13px;
+    background-size: 14px, 9px;
+  }
 }
+
+/* Phones */
+@media (max-width: 480px) {
+  .lang-btn {
+    top: 15px;
+    left: 8px;
+    width: 70px;
+    padding: 5px 20px 5px 8px;
+    font-size: 12px;
+    background-size: 12px, 8px;
+  }
+}
+/* Desktop styles (keep as-is) */
+#signup-btn .loginimage {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  vertical-align: middle;
+  margin-left: 6px;
+  transition: transform 0.3s ease;
+}
+
 #signup-btn:hover .loginimage {
   transform: scale(1.2);
 }
 
-
-.arrow{
-  position:absolute;
-  top:auto;
-right: 8px;
-width:10px;
-height:auto;
+/* Tablets / small screens */
+@media (max-width: 768px) {
+  #signup-btn .loginimage {
+    width: 18px;
+    height: 18px;
+    margin-left: 4px;
+  }
 }
 
+/* Phones */
+@media (max-width: 480px) {
+  #signup-btn .loginimage {
+    width: 16px;
+    height: 16px;
+    margin-left: 3px;
+  }
+}
+
+/* Desktop styles (keep as-is) */
+.arrow {
+  position: absolute;
+  top: auto;
+  right: 8px;
+  width: 10px;
+  height: auto;
+}
+
+/* Tablets / small screens */
+@media (max-width: 768px) {
+  .arrow {
+    width: 8px;      /* slightly smaller */
+    right: 6px;      /* adjust position */
+  }
+}
+
+/* Phones */
+@media (max-width: 480px) {
+  .arrow {
+    width: 6px;      /* smaller for small phones */
+    right: 4px;      /* move closer to edge */
+  }
+}
+/* Desktop styles (keep as-is) */
 .logo {
   position: absolute;
-  top: 18px;    
-  left: 650px;   
-  width: 50px;  
+  top: 18px;
+  left: 650px;
+  width: 50px;
   height: auto;
-  border-radius: 50%; 
+  border-radius: 50%;
 }
-.logo1{
+
+/* Tablets / small screens */
+@media (max-width: 1024px) {
+  .logo {
+    left: 450px;   /* move logo closer to center */
+    width: 45px;   /* slightly smaller */
+  }
+}
+
+/* Phones */
+@media (max-width: 768px) {
+  .logo {
+    left: 300px;   /* adjust for small screens */
+    width: 40px;   /* shrink logo */
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    left: 150px;   /* fit into tiny screens */
+    width: 35px;   /* smaller logo for phones */
+  }
+}
+/* Desktop styles (keep as-is) */
+.logo1 {
   position: absolute;
-  top: 18px;    
-  left: 480px;   
-  width: 150px;  
+  top: 18px;
+  left: 480px;
+  width: 150px;
   height: auto;
 }
 
+/* Tablets / small screens */
+@media (max-width: 1024px) {
+  .logo1 {
+    left: 320px;  /* shift left for smaller screens */
+    width: 120px; /* shrink slightly */
+  }
+}
+
+/* Phones */
+@media (max-width: 768px) {
+  .logo1 {
+    left: 180px;  /* adjust for mobile screens */
+    width: 100px; /* smaller */
+  }
+}
+
+@media (max-width: 480px) {
+  .logo1 {
+    left: 80px;   /* fit tiny screens */
+    width: 80px;  /* compact size */
+  }
+}
+/* Desktop styles (keep as-is) */
 .box-text {
   font-size: 40px;
-  font-weight:bold;
+  font-weight: bold;
   color: #2207cd;
   position: absolute;
-  top: 20px;    
-  left: 700px;   
-  width: 150px;  
+  top: 20px;
+  left: 700px;
+  width: 150px;
   height: auto;
 }
 
-.separator {
-  height: 50px;
-  width: 1px;                
-  background-color: #ccc;     
-  position: absolute;
-  top: 18px;                   
-  bottom: 10px;                
-  left: 640px;                  
+/* Tablets / small screens */
+@media (max-width: 1024px) {
+  .box-text {
+    left: 500px;     /* move closer */
+    font-size: 32px; /* slightly smaller */
+    width: 120px;
+  }
 }
 
+/* Phones */
+@media (max-width: 768px) {
+  .box-text {
+    left: 250px;     /* adjust for mobile */
+    font-size: 24px; /* smaller text */
+    width: 100px;
+  }
+}
 
+@media (max-width: 480px) {
+  .box-text {
+    left: 100px;     /* tiny screens */
+    font-size: 18px;
+    width: 80px;
+  }
+}
+/* Desktop styles (keep as-is) */
+.separator {
+  height: 50px;
+  width: 1px;
+  background-color: #ccc;
+  position: absolute;
+  top: 18px;
+  bottom: 10px;
+  left: 640px;
+}
+
+/* Tablets / small screens */
+@media (max-width: 1024px) {
+  .separator {
+    left: 450px; /* shift left for smaller screens */
+    height: 45px;
+  }
+}
+
+/* Phones */
+@media (max-width: 768px) {
+  .separator {
+    left: 250px; /* adjust for mobile */
+    height: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .separator {
+    left: 100px; /* tiny screens */
+    height: 35px;
+  }
+}
+/* Desktop styles (keep as-is) */
 .emergency-wrapper {
   position: fixed;
-  bottom: 20px;       /* distance from bottom */
-  right: 20px;        /* distance from right */
+  bottom: 20px;
+  right: 20px;
   z-index: 1000;
 }
 
-/* Emergency main button */
+/* Tablets / small screens */
+@media (max-width: 768px) {
+  .emergency-wrapper {
+    bottom: 15px;  /* slightly closer to edge */
+    right: 15px;
+  }
+}
+
+/* Phones */
+@media (max-width: 480px) {
+  .emergency-wrapper {
+    bottom: 10px;  /* more compact */
+    right: 10px;
+  }
+}
+
+
+/* Desktop styles (keep as-is) */
 .contact {
   display: inline-block;
   background: #e49a9a;
@@ -123,13 +347,46 @@ height:auto;
   cursor: pointer;
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
+
+/* Tablets / small screens */
+@media (max-width: 768px) {
+  .contact {
+    padding: 10px 16px; /* slightly smaller */
+    font-size: 14px;
+  }
+}
+
+/* Phones */
+@media (max-width: 480px) {
+  .contact {
+    padding: 8px 12px; /* smaller for small screens */
+    font-size: 12px;
+  }
+}
+
+/* Desktop hover (keep as-is) */
 .contact:hover {
-  background: #e60000;      
-  transform: scale(1.3);    
-  box-shadow: 0 6px 12px rgba(0,0,0,0.3); 
+  background: #e60000;
+  transform: scale(1.3);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+}
+
+/* Tablets / small screens */
+@media (max-width: 768px) {
+  .contact:hover {
+    transform: scale(1.2); /* slightly smaller scale on smaller screens */
+  }
+}
+
+/* Phones */
+@media (max-width: 480px) {
+  .contact:hover {
+    transform: scale(1.1); /* even smaller scale for tiny screens */
+  }
 }
 
 
+/* Desktop styles (keep as-is) */
 .emergency-submenu {
   display: none;
   margin-top: 10px;
@@ -140,6 +397,24 @@ height:auto;
   padding: 5px 0;
 }
 
+/* Tablets / small screens */
+@media (max-width: 768px) {
+  .emergency-submenu {
+    width: 120px;   /* limit width */
+    right: 0;       /* align with button */
+  }
+}
+
+/* Phones */
+@media (max-width: 480px) {
+  .emergency-submenu {
+    width: 100px;   /* smaller for tiny screens */
+    right: 0;
+    font-size: 12px; /* smaller text */
+    padding: 4px 0;
+  }
+}
+/* Desktop styles (keep as-is) */
 .emergency-submenu li a {
   display: block;
   padding: 8px 15px;
@@ -147,55 +422,171 @@ height:auto;
   color: #333;
 }
 
+/* Tablets / small screens */
+@media (max-width: 768px) {
+  .emergency-submenu li a {
+    padding: 6px 12px;  /* smaller padding */
+    font-size: 14px;    /* slightly smaller text */
+  }
+}
+
+/* Phones */
+@media (max-width: 480px) {
+  .emergency-submenu li a {
+    padding: 4px 8px;   /* compact for tiny screens */
+    font-size: 12px;    /* readable on small screens */
+  }
+}
+
+
+./* Desktop hover (keep as-is) */
 .emergency-submenu li a:hover {
   background: #ffe0e0;
   color: #c00;
 }
 
+/* Tablets / small screens */
+@media (max-width: 768px) {
+  .emergency-submenu li a:hover {
+    background: #ffdada; /* slightly lighter hover for touch */
+  }
+}
 
-
-
-
-
- 
+/* Phones */
+@media (max-width: 480px) {
+  .emergency-submenu li a:hover {
+    background: #ffdada; /* same subtle effect for tap */
+  }
+}
+/* Desktop styles (keep as-is) */
 #login-btn {
   position: absolute;
-  top: 25px;      
-  right: 30px;  
+  top: 25px;
+  right: 30px;
   border: solid black 2px;
   border-radius: 88px;
   padding: 7px 10px;
   background-color: rgb(248, 249, 249);
 }
-#login-btn > .loginimage {
-  width: 24px;           
-  height: 24px;          
-  object-fit: contain;   
-  vertical-align: middle;
-  margin-left: 6px;     
-  transition: transform 0.3s ease;  
+
+/* Tablets / small screens */
+@media (max-width: 768px) {
+  #login-btn {
+    top: 20px;
+    right: 20px;
+    padding: 6px 8px;   /* slightly smaller padding */
+  }
 }
 
- 
+/* Phones */
+@media (max-width: 480px) {
+  #login-btn {
+    top: 15px;
+    right: 10px;
+    padding: 5px 6px;   /* compact for tiny screens */
+    font-size: 12px;     /* readable on small screens */
+  }
+}
+/* Desktop styles (keep as-is) */
+#login-btn > .loginimage {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  vertical-align: middle;
+  margin-left: 6px;
+  transition: transform 0.3s ease;
+}
+
+/* Tablets / small screens */
+@media (max-width: 768px) {
+  #login-btn > .loginimage {
+    width: 20px;
+    height: 20px;
+    margin-left: 4px;
+  }
+}
+
+/* Phones */
+@media (max-width: 480px) {
+  #login-btn > .loginimage {
+    width: 18px;
+    height: 18px;
+    margin-left: 3px;
+  }
+}
+/* Desktop hover (keep as-is) */
 #login-btn:hover > .loginimage {
   transform: scale(1.2);
 }
 
-
-#login-btn:hover {
-  background-color: rgb(167, 228, 232);  
-  color: white;             
-  border-color: black;      
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);  
-  cursor: pointer; 
+/* Tablets / small screens */
+@media (max-width: 768px) {
+  #login-btn:hover > .loginimage {
+    transform: scale(1.1); /* slightly smaller scale */
+  }
 }
+
+/* Phones */
+@media (max-width: 480px) {
+  #login-btn:hover > .loginimage {
+    transform: scale(1.05); /* subtle scale for tiny screens */
+  }
+}
+/* Desktop hover (keep as-is) */
+#login-btn:hover {
+  background-color: rgb(167, 228, 232);
+  color: white;
+  border-color: black;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  cursor: pointer;
+}
+
+/* Tablets / small screens */
+@media (max-width: 768px) {
+  #login-btn:hover {
+    box-shadow: 0 3px 8px rgba(0,0,0,0.2); /* slightly smaller shadow */
+  }
+}
+
+/* Phones */
+@media (max-width: 480px) {
+  #login-btn:hover {
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15); /* subtle shadow */
+    font-size: 12px; /* ensure text is readable */
+  }
+}
+/* Desktop hover (keep as-is) */
 #login-btn:hover #login-dropdown {
   display: block;
 }
+
+/* Tablets / small screens */
+@media (max-width: 768px) {
+  #login-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    display: none; /* initially hidden */
+  }
+
+  #login-btn:active #login-dropdown,
+  #login-btn:focus #login-dropdown {
+    display: block; /* show on tap/click */
+  }
+}
+
+/* Phones */
+@media (max-width: 480px) {
+  #login-dropdown {
+    min-width: 120px; /* smaller dropdown */
+    font-size: 12px;  /* readable on small screens */
+  }
+}
+/* Desktop styles (keep as-is) */
 .account-dropdown {
   display: none;
   position: absolute;
-  top: 100%;   
+  top: 100%;
   left: 0;
   background: rgb(50, 159, 94);
   border-radius: 6px;
@@ -203,24 +594,78 @@ height:auto;
   z-index: 100;
   min-width: 150px;
   font-size: 14px;
-   
 }
 
+/* Tablets / small screens */
+@media (max-width: 768px) {
+  .account-dropdown {
+    min-width: 130px;   /* slightly smaller */
+    font-size: 13px;    /* smaller font */
+    left: auto;         /* align better on smaller screens */
+    right: 0;
+  }
+}
+
+/* Phones */
+@media (max-width: 480px) {
+  .account-dropdown {
+    min-width: 100px;   /* compact for tiny screens */
+    font-size: 12px;
+    border-radius: 4px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  }
+}
+/* Desktop styles (keep as-is) */
 .account-dropdown .dropdown-section a {
   display: block;
   text-decoration: none;
   color: #333;
   padding: 4px 8px;
-  
 }
 
+/* Tablets / small screens */
+@media (max-width: 768px) {
+  .account-dropdown .dropdown-section a {
+    padding: 3px 6px;  /* slightly smaller */
+    font-size: 13px;
+  }
+}
+
+/* Phones */
+@media (max-width: 480px) {
+  .account-dropdown .dropdown-section a {
+    padding: 2px 4px;  /* compact for tiny screens */
+    font-size: 12px;
+  }
+}
+
+/* Desktop hover (keep as-is) */
 .account-dropdown .dropdown-section a:hover {
   background: linear-gradient(90deg, #ff6a00, #ee0979, #00c6ff);
   color: white;
   border-radius: 4px;
-
 }
 
+/* Tablets / small screens */
+@media (max-width: 768px) {
+  .account-dropdown .dropdown-section a:active,
+  .account-dropdown .dropdown-section a:focus {
+    background: linear-gradient(90deg, #ff6a00, #ee0979, #00c6ff);
+    color: white;
+    border-radius: 4px;
+  }
+}
+
+/* Phones */
+@media (max-width: 480px) {
+  .account-dropdown .dropdown-section a:active,
+  .account-dropdown .dropdown-section a:focus {
+    background: linear-gradient(90deg, #ff6a00, #ee0979, #00c6ff);
+    color: white;
+    border-radius: 4px;
+  }
+}
+/* Desktop styles (keep as-is) */
 .facebook {
   position: fixed;        
   top: 250px;               
@@ -239,11 +684,48 @@ height:auto;
   border: solid #000000;
 }
 
-.facebook img {
-  width: 54px;   
-  height: 54px;
+/* Tablets / small screens */
+@media (max-width: 768px) {
+  .facebook {
+    top: 200px;           /* move down for smaller screens */
+    width: 30px;
+    height: 30px;
+  }
 }
-  
+
+/* Phones */
+@media (max-width: 480px) {
+  .facebook {
+    top: 160px;           /* further down on tiny screens */
+    width: 28px;
+    height: 28px;
+    border-radius: 6px 0 0 0;  /* slightly smaller radius */
+  }
+}
+/* Desktop */
+.facebook img {
+  width: 100%;   /* fit the button */
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+/* Tablets / small screens */
+@media (max-width: 768px) {
+  .facebook img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+/* Phones */
+@media (max-width: 480px) {
+  .facebook img {
+    width: 100%;
+    height: 100%;
+  }
+}
+/* Desktop hover (keep as-is) */
 .facebook:hover {
   background-color: #4267B2;  
   transform: translateY(-50%) scale(1.1);  
@@ -251,19 +733,76 @@ height:auto;
   transition: all 0.3s ease;  
 }
 
+/* Tablets / small screens */
+@media (max-width: 768px) {
+  .facebook:active,
+  .facebook:focus {
+    background-color: #4267B2;  
+    transform: translateY(-50%) scale(1.1);  
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3); 
+  }
+}
+
+/* Phones */
+@media (max-width: 480px) {
+  .facebook:active,
+  .facebook:focus {
+    background-color: #4267B2;  
+    transform: translateY(-50%) scale(1.05); /* slightly smaller scale for small screens */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.25); 
+  }
+}
+
+
  
 .facebook {
   cursor: pointer;
 }
 
+/* Desktop */
 .facebook img {
-  width: 54px;   
-  height: 34px;
+  width: 100%;      /* fits the button width */
+  height: 100%;     /* fits the button height */
+  object-fit: cover;  
   transition: transform 0.3s ease;  
 }
-.facebook:hover img {
-  transform: scale(1.1);  
+
+/* Tablets / small screens */
+@media (max-width: 768px) {
+  .facebook img {
+    width: 100%;
+    height: 100%;
+  }
 }
+
+/* Phones */
+@media (max-width: 480px) {
+  .facebook img {
+    width: 100%;
+    height: 100%;
+  }
+}
+/* Desktop hover */
+.facebook:hover img {
+  transform: scale(1.1);
+}
+
+/* Tablets / small screens */
+@media (max-width: 768px) {
+  .facebook:active img,
+  .facebook:focus img {
+    transform: scale(1.05); /* slightly smaller scale for touch screens */
+  }
+}
+
+/* Phones */
+@media (max-width: 480px) {
+  .facebook:active img,
+  .facebook:focus img {
+    transform: scale(1.05);
+  }
+}
+/* Desktop (keep as-is) */
 .instagram {
   position: fixed;        
   top: 287px;               
@@ -284,26 +823,77 @@ height:auto;
   transition: all 0.3s ease;  
 }
 
- 
+/* Tablets / small screens */
+@media (max-width: 768px) {
+  .instagram {
+    top: 230px;    /* move down for smaller screens */
+    width: 30px;
+    height: 30px;
+  }
+}
+
+/* Phones */
+@media (max-width: 480px) {
+  .instagram {
+    top: 190px;    /* move further down on tiny screens */
+    width: 28px;
+    height: 28px;
+  }
+}
+/* Desktop hover */
 .instagram:hover {
   background-color: #C13584;  
   transform: translateY(-50%) scale(1.1);  
   box-shadow: 0 6px 12px rgba(0,0,0,0.3);
 }
 
- 
+/* Tablets / small screens */
+@media (max-width: 768px) {
+  .instagram:active,
+  .instagram:focus {
+    background-color: #C13584;  
+    transform: translateY(-50%) scale(1.05); /* slightly smaller scale */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.25);
+  }
+}
+
+/* Phones */
+@media (max-width: 480px) {
+  .instagram:active,
+  .instagram:focus {
+    background-color: #C13584;  
+    transform: translateY(-50%) scale(1.05);
+    box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+  }
+}
+/* Desktop */
 .instagram img {
-  width: 54px;   
-  height: 34px;
+  width: 100%;      /* fits the button width */
+  height: 100%;     /* fits the button height */
+  object-fit: cover;  
   transition: transform 0.3s ease;
+}
+
+/* Tablets / small screens */
+@media (max-width: 768px) {
+  .instagram img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+/* Phones */
+@media (max-width: 480px) {
+  .instagram img {
+    width: 100%;
+    height: 100%;
+  }
 }
 
 .instagram:hover img {
   transform: scale(1.1);  
 }
-
-
-
+/* Desktop (keep as-is) */
 .whatsapp {
   position: fixed;        
   top: 324px;               
@@ -324,27 +914,78 @@ height:auto;
   transition: all 0.3s ease; 
 }
 
+/* Tablets / small screens */
+@media (max-width: 768px) {
+  .whatsapp {
+    top: 270px;    /* move down for smaller screens */
+    width: 30px;
+    height: 30px;
+  }
+}
 
+/* Phones */
+@media (max-width: 480px) {
+  .whatsapp {
+    top: 220px;    /* move further down on tiny screens */
+    width: 28px;
+    height: 28px;
+  }
+}
+/* Desktop hover */
 .whatsapp:hover {
   background-color: #b8f6cf; 
   transform: translateY(-50%) scale(1.1);  
   box-shadow: 0 6px 12px rgba(0,0,0,0.3);  
 }
 
- 
+/* Tablets / small screens */
+@media (max-width: 768px) {
+  .whatsapp:active,
+  .whatsapp:focus {
+    background-color: #b8f6cf;
+    transform: translateY(-50%) scale(1.05);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.25);
+  }
+}
+
+/* Phones */
+@media (max-width: 480px) {
+  .whatsapp:active,
+  .whatsapp:focus {
+    background-color: #b8f6cf;
+    transform: translateY(-50%) scale(1.05);
+    box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+  }
+}
+/* Desktop */
 .whatsapp img {
-  width: 40px;   
-  height: 37px;
+  width: 100%;       /* fits the button width */
+  height: 100%;      /* fits the button height */
+  object-fit: cover;  
   transition: transform 0.3s ease;
 }
+
+/* Tablets / small screens */
+@media (max-width: 768px) {
+  .whatsapp img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+/* Phones */
+@media (max-width: 480px) {
+  .whatsapp img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
 
 .whatsapp:hover img {
   transform: scale(1.1);  
 }
-
-
-
-
+/* Desktop (keep as-is) */
 .telegram {
   position: fixed;        
   top: 361px;               
@@ -365,40 +1006,137 @@ height:auto;
   transition: all 0.3s ease;  
 }
 
- 
+/* Tablets / small screens */
+@media (max-width: 768px) {
+  .telegram {
+    top: 300px;   /* move down a bit */
+    width: 30px;
+    height: 30px;
+  }
+}
+
+/* Phones */
+@media (max-width: 480px) {
+  .telegram {
+    top: 250px;   /* further down for small screens */
+    width: 28px;
+    height: 28px;
+  }
+}
+/* Desktop hover */
 .telegram:hover {
   background-color: #0088cc;  
   transform: translateY(-50%) scale(1.1);  
   box-shadow: 0 6px 12px rgba(0,0,0,0.3);  
 }
 
- 
+/* Tablets / small screens */
+@media (max-width: 768px) {
+  .telegram:active,
+  .telegram:focus {
+    background-color: #0088cc;
+    transform: translateY(-50%) scale(1.05);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.25);
+  }
+}
+
+/* Phones */
+@media (max-width: 480px) {
+  .telegram:active,
+  .telegram:focus {
+    background-color: #0088cc;
+    transform: translateY(-50%) scale(1.05);
+    box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+  }
+}
+/* Desktop */
 .telegram img {
-  width: 40px;   
-  height: 30px;
+  width: 100%;       /* fits button width */
+  height: 100%;      /* fits button height */
+  object-fit: cover;  
   transition: transform 0.3s ease;
 }
 
-.telegram:hover img {
-  transform: scale(1.1);  
+/* Tablets / small screens */
+@media (max-width: 768px) {
+  .telegram img {
+    width: 100%;
+    height: 100%;
+  }
 }
 
+/* Phones */
+@media (max-width: 480px) {
+  .telegram img {
+    width: 100%;
+    height: 100%;
+  }
+}
+/* Desktop hover */
+.telegram:hover img {
+  transform: scale(1.1);
+}
 
+/* Tablets / small screens */
+@media (max-width: 768px) {
+  .telegram:active img,
+  .telegram:focus img {
+    transform: scale(1.05);
+  }
+}
 
- 
+/* Phones */
+@media (max-width: 480px) {
+  .telegram:active img,
+  .telegram:focus img {
+    transform: scale(1.05);
+  }
+}
+/* Default desktop/mobile */
 .scroll-btn.hide {
   transform: translateY(100px);   
   opacity: 0;
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
+/* Small screens: phones */
+@media (max-width: 480px) {
+  .scroll-btn.hide {
+    transform: translateY(80px); /* slightly less offset */
+    /* optional: adjust button size if needed */
+    width: 40px;
+    height: 40px;
+  }
+}
 
-
+/* Tablets */
+@media (max-width: 768px) {
+  .scroll-btn.hide {
+    transform: translateY(90px);
+    width: 45px;
+    height: 45px;
+  }
+}
 .slideshow {
   position: relative;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100vh; /* fallback for desktops */
+  max-height: 100vh;
   overflow: hidden;
+}
+
+/* Phones */
+@media (max-width: 480px) {
+  .slideshow {
+    height: 60vh; /* shorter on small screens to fit content */
+  }
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+  .slideshow {
+    height: 80vh; /* intermediate height */
+  }
 }
 
 .slideshow img {
@@ -409,7 +1147,30 @@ height:auto;
   opacity: 0;
   animation: fade 50s infinite;
 }
+.slideshow img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  animation: fade 50s infinite;
+  transition: opacity 0.5s ease-in-out; /* smoother fade on mobile */
+}
 
+/* Phones */
+@media (max-width: 480px) {
+  .slideshow img {
+    object-fit: contain; /* ensures important parts of image are visible */
+  }
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+  .slideshow img {
+    object-fit: cover; /* standard cover for medium screens */
+  }
+}
+/* Desktop */
 .slideshow img:nth-child(1) { animation-delay: 0s; }
 .slideshow img:nth-child(2) { animation-delay: 5s; }
 .slideshow img:nth-child(3) { animation-delay: 10s; }
@@ -429,7 +1190,14 @@ height:auto;
   100% { opacity: 0; }
 }
 
-
+/* Mobile optimization */
+@media (max-width: 480px) {
+  .slideshow img {
+    object-fit: contain; /* ensure content fits */
+    animation-duration: 30s; /* faster animation for mobile */
+  }
+}
+/* Desktop (keep as is) */
 .missions {
   position: absolute;
   top: 260px;
@@ -442,32 +1210,71 @@ height:auto;
   font: bold;
 }
 
-.missions-content{
+/* Mobile optimization */
+@media (max-width: 480px) {
+  .missions {
+    top: 120px;        /* higher up for small screens */
+    left: 50%;         /* center horizontally */
+    font-size: 1.4rem; /* smaller font for mobile */
+    transform: translateX(-50%);
+    text-align: center;
+  }
+}
+/* Desktop (keep as is) */
+.missions-content {
   position: absolute;
   top: 350px;
   left: 290px;
   transform: translateX(-50%);
   color: rgb(0, 0, 0);
   font-size: 2rem;
-  
   text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
   font: bold;
 }
 
+/* Mobile optimization */
+@media (max-width: 480px) {
+  .missions-content {
+    top: 180px;         /* move up for small screens */
+    left: 50%;          /* center horizontally */
+    font-size: 1.4rem;  /* smaller font */
+    transform: translateX(-50%);
+    text-align: center;  /* center text */
+  }
+}
+/* Desktop (keep as is) */
 .container {
-  display: flex;         
-  gap: 35px;             
+  display: flex;
+  gap: 35px;
   left: 0;
 }
 
+/* Mobile optimization */
+@media (max-width: 480px) {
+  .container {
+    flex-direction: column;  /* stack items vertically */
+    gap: 20px;               /* smaller gap for mobile */
+    align-items: center;     /* center items horizontally */
+    padding: 0 10px;         /* some padding on sides */
+  }
+}
+/* Desktop (keep as is) */
 .circle-container {
   display: flex;
   gap: 10px;
-  flex-direction: column;  
- 
-  margin-left:20px ;     
+  flex-direction: column;
+  margin-left: 20px;
 }
 
+/* Mobile optimization */
+@media (max-width: 480px) {
+  .circle-container {
+    margin-left: 0;           /* remove left margin on small screens */
+    gap: 8px;                 /* slightly smaller gap */
+    align-items: center;      /* center circles horizontally */
+  }
+}
+/* Desktop (keep as is) */
 .circle {
   margin-top: 70px;
   width: 180px;
@@ -477,34 +1284,64 @@ height:auto;
   border: solid rgb(22, 146, 174) 10px;
   overflow: hidden;
   display: flex;
-  
   justify-content: center;
   align-items: center;
 }
 
+/* Mobile optimization */
+@media (max-width: 480px) {
+  .circle {
+    width: 120px;      /* smaller width */
+    height: 120px;     /* smaller height */
+    margin-top: 50px;  /* reduce top margin */
+    border-width: 6px; /* thinner border */
+  }
+}
+/* Desktop (keep as is) */
 .circle img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
+/* Mobile optimization */
+@media (max-width: 480px) {
+  .circle img {
+    width: 100%;
+    height: 100%;
+  }
+}
+/* Desktop (keep as is) */
 .circle-text {
   margin-top: 10px;
   font-size: 30px;
   font-weight: bold;
   color: #75778d;
   text-decoration: none;
-  gap:80;
+  gap: 80;
 }
 
+/* Mobile optimization */
+@media (max-width: 480px) {
+  .circle-text {
+    font-size: 18px;  /* smaller font for phones */
+    margin-top: 6px;
+    gap: 20px;        /* adjust spacing */
+    text-align: center;
+  }
+}
 .circle-text:hover {
   color: blue;
   text-decoration: underline;
 }
 
-
-
- 
+/* Mobile devices - no hover needed */
+@media (max-width: 480px) {
+  .circle-text:hover {
+    color: #75778d; /* stays same as default on mobile */
+    text-decoration: none;
+  }
+}
 .horizontal-box {
   display: flex;                 
   gap: 90px;                    
@@ -512,11 +1349,25 @@ height:auto;
   padding: 20px 30px;          
   background-color: #d3e2ec;    
   box-sizing: border-box;       
-  overflow-x: hidden;            
+  overflow-x: auto;            /* allow horizontal scroll on small screens */
   scroll-behavior: smooth; 
   border: solid rgb(223, 204, 204) 8px;     
 }
 
+/* Mobile optimization */
+@media (max-width: 768px) {
+  .horizontal-box {
+    flex-wrap: nowrap;          /* keep items in a row */
+    gap: 20px;                  /* smaller gap for small screens */
+    padding: 15px;              
+    overflow-x: auto;           /* horizontal scrolling */
+  }
+
+  .horizontal-box .box-item {
+    flex: 0 0 70%;              /* make box-item smaller on mobile */
+    height: auto;               
+  }
+}
 .horizontal-box .box-item {
   z-index: 0;
   overflow: hidden;
@@ -526,12 +1377,11 @@ height:auto;
   border-radius: 12px;          
   display: flex;
   flex-direction: column;      
-  justify-content: space-between;
   justify-content: center;
   align-items: center;
   text-align: center;  
   object-fit: cover;
-  gap:12px;        
+  gap: 12px;        
   padding: 20px;
   color: white;
   font-size: 18px;
@@ -539,28 +1389,59 @@ height:auto;
   border: 4px solid #005f99;    
   box-shadow: 0 4px 10px rgba(0,0,0,0.15);  
   transition: transform 0.2s ease, box-shadow 0.2s ease;
- 
 }
 
+/* Mobile optimization */
+@media (max-width: 768px) {
+  .horizontal-box .box-item {
+    flex: 0 0 70%;          /* smaller width on mobile */
+    height: auto;           /* allow height to adjust */
+    font-size: 16px;        /* slightly smaller text */
+    padding: 15px;          
+    gap: 8px;               /* smaller gap for compact display */
+  }
+}
 .horizontal-box .box-item:hover {
-  width:300px;
-  height:400px;
+  width: 300px;                   
+  height: 400px;                  
   transform: translateY(-6px);    
   box-shadow: 0 8px 20px rgba(0,0,0,0.25);
 }
-.img{
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .horizontal-box .box-item:hover {
+    width: 70%;          /* match mobile width */
+    height: auto;        /* allow content to define height */
+    transform: none;     /* avoid lift effect on touch */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15); /* softer shadow */
+  }
+}
+.img {
   width: 300px;
- max-width: 100%;
+  max-width: 100%; /* ensures it never overflows on small screens */
+  height: auto;    /* maintain aspect ratio */
 }
 
-
- 
+/* Optional: adjust for smaller screens */
+@media (max-width: 768px) {
+  .img {
+    width: 90%;   /* occupy most of mobile screen */
+    max-width: 90%;
+  }
+}
 .login-dropdown-container {
   position: relative;
   display: inline-block;
 }
 
- 
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .login-dropdown-container {
+    width: 90%;        /* occupy most of mobile width */
+    margin: 0 auto;    /* center it */
+  }
+}
 .login-dropdown-container .dropdown-content {
   display: none;
   position: absolute;
@@ -574,6 +1455,14 @@ height:auto;
   font-size: 14px;
 }
 
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .login-dropdown-container .dropdown-content {
+    min-width: 90%;        /* take most of mobile width */
+    left: 5%;              /* small left margin */
+    font-size: 12px;       /* slightly smaller font */
+  }
+}
 .login-dropdown-container .dropdown-content a {
   color: #333;
   padding: 6px 12px;
@@ -583,26 +1472,46 @@ height:auto;
   border-radius: 4px;
 }
 
-.login-dropdown-container .dropdown-content a:hover {
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .login-dropdown-container .dropdown-content a {
+    padding: 8px 10px;    /* smaller padding to fit narrow screens */
+    font-size: 13px;      /* slightly smaller font */
+  }
+}
+.login-dropdown-container .dropdown-content a:hover,
+.login-dropdown-container .dropdown-content a:active,
+.login-dropdown-container .dropdown-content a:focus {
   background: linear-gradient(90deg, #ff6a00, #ee0979, #00c6ff);
   color: white;
 }
 
- 
 .login-dropdown-container:hover .dropdown-content {
   display: block;
   cursor: pointer;
 }
- 
-body {
+ body {
   margin: 0;
   padding: 0;
-  background-color: #f0f0f0;  
+  background-color: #f0f0f0;
   font-family: Arial, sans-serif;
+  width: 100%;
+  overflow-x: hidden;  /* prevents horizontal scroll */
+  font-size: 16px;     /* base font size */
 }
 
+/* Optional: adjust font size on smaller screens */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+}
 
-
+@media (max-width: 480px) {
+  body {
+    font-size: 12px;
+  }
+}
 .horizontal-bar {
   overflow: hidden;
   display: flex;  
@@ -615,14 +1524,22 @@ body {
   box-shadow: 0 2px 6px rgba(146, 84, 84, 0.2);
   width: 100%;
   height: 400px;
-  margin-top: 0px;
+  margin-top: 0;
   z-index: 0;
   gap: 85px;                 
+  flex-wrap: wrap; /* ensures items wrap on smaller screens */
 }
 
- 
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .horizontal-bar {
+    flex-direction: column; /* stack items vertically */
+    height: auto;           /* allow height to adjust */
+    gap: 30px;              /* smaller spacing on mobile */
+    padding: 10px 15px;
+  }
+}
 .bar-text {
- 
   position: absolute;
   top: 10px;
   left: 50%;
@@ -634,10 +1551,18 @@ body {
   z-index: 1;
 }
 
- 
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .bar-text {
+    font-size: 20px;  /* smaller text for mobile */
+    top: 5px;         /* slightly closer to top */
+    padding: 0 10px;  /* prevent overflow */
+    width: 90%;       /* make sure text fits mobile screen */
+  }
+}
 .bar-item {
   margin-top: 130px;
-  margin-left: 2px;;
+  margin-left: 2px;
   padding: 10px 20px;
   background-color: #cde2f0;
   color: #000;
@@ -650,32 +1575,71 @@ body {
   width: 180px;
 }
 
- 
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .bar-item {
+    margin-top: 80px;       /* reduce top margin for smaller screens */
+    height: 120px;          /* smaller height */
+    width: 120px;           /* smaller width */
+    padding: 8px 12px;      /* adjust padding */
+    font-size: 14px;        /* make text smaller */
+  }
+}
 .bar-item:hover {
- 
   color: white;
   transform: scale(1.05);
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Mobile: reduce hover scale to prevent layout issues */
+@media (max-width: 768px) {
+  .bar-item:hover {
+    transform: scale(1.03);
+  }
 }
 .bar-item img {
-  width: 100%;            
-  height: 100%;          
-  object-fit: cover;      
-  border-radius: 50%;    
-  transition: transform 0.3s ease;  
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
 }
 
 .bar-item:hover img {
-  transform: scale(1.05);  
+  transform: scale(1.05);
 }
 
+/* Mobile adjustment */
+@media (max-width: 768px) {
+  .bar-item:hover img {
+    transform: scale(1.03);
+  }
+}
+.bar-item:hover img {
+  transform: scale(1.05); /* default for desktop */
+}
 
+/* Mobile adjustment */
+@media (max-width: 768px) {
+  .bar-item:hover img {
+    transform: scale(1.03); /* smaller scale for mobile */
+  }
+}
 .footer {
   background: linear-gradient(to right, #4a90e2, #5bc0de);
   color: #fff;
   padding: 40px 20px;
   font-family: Arial, sans-serif;
+  text-align: center; /* ensures content is centered on smaller screens */
 }
 
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .footer {
+    padding: 20px 10px; /* less padding on mobile */
+    font-size: 14px;     /* slightly smaller text */
+  }
+}
 .footer-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);  
@@ -683,6 +1647,13 @@ body {
   margin-bottom: 20px;
 }
 
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .footer-container {
+    grid-template-columns: 1fr;  /* single column for phones */
+    gap: 15px;                   /* reduce spacing */
+  }
+}
 .footer-column h4 {
   font-size: 16px;
   font-weight: bold;
@@ -690,27 +1661,67 @@ body {
   text-transform: uppercase;
 }
 
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .footer-column h4 {
+    font-size: 14px;        /* slightly smaller */
+    text-align: center;     /* center on small screens */
+  }
+}
 .footer-column ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .footer-column ul {
+    text-align: center;      /* center list items */
+    margin-bottom: 10px;     /* add spacing between columns */
+  }
+  .footer-column ul li {
+    margin-bottom: 8px;      /* add spacing between links */
+  }
+}
 .footer-column ul li {
   margin-bottom: 10px;
 }
 
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .footer-column ul li {
+    margin-bottom: 8px;       /* slightly smaller spacing */
+    text-align: center;        /* center text on mobile */
+  }
+}
 .footer-column ul li a {
   color: #e6e6e6;
   text-decoration: none;
   transition: 0.3s;
 }
 
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .footer-column ul li a {
+    font-size: 14px;   /* slightly smaller text for mobile */
+    display: block;    /* ensures proper spacing on small screens */
+    text-align: center;
+  }
+}
 .footer-column ul li a:hover {
   color: #fff;
   text-decoration: underline;
 }
 
+/* Mobile adjustments (hover may not work on touch, so optional focus) */
+@media (max-width: 768px) {
+  .footer-column ul li a:active,
+  .footer-column ul li a:focus {
+    color: #fff;
+    text-decoration: underline;
+  }
+}
 .footer-bottom {
   border-top: 1px solid rgba(255,255,255,0.3);
   padding-top: 15px;
@@ -720,49 +1731,129 @@ body {
   font-size: 14px;
 }
 
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 8px;
+  }
+}
 .social-links a {
   color: #e6e6e6;
   margin-left: 10px;
   text-decoration: none;
+  transition: transform 0.3s ease;
+}
+
+.social-links a:hover {
+  transform: scale(1.1);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 10px;
+  }
+}
+.social-links a {
+  color: #e6e6e6;
+  margin-left: 10px;
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .social-links a:hover {
   color: #fff;
+  transform: scale(1.1);
 }
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 10px;
+  }
+}
+
 .teamNames{
   color: #e6e6e6;
   margin-left: 10px;
   text-decoration: none;
 }
+.teamNames {
+  color: #e6e6e6;
+  margin-left: 10px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
 .teamNames:hover {
   color: #fff;
 }
-
 .bar-team {
-  margin-left: 250px;  
-  text-align: left;   
+  margin-left: 250px;   /* desktop spacing */
+  text-align: left;
 }
 
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .bar-team {
+    margin-left: 20px;   /* smaller margin on phones */
+    text-align: center;  /* center text for smaller screens */
+  }
+}
 .bar-team img {
-  width: 80px;          
-  height: 80px; 
-  margin-left: 115px;         
-  border-radius: 50%;    
-  object-fit: cover;     
+  width: 80px;
+  height: 80px;
+  margin-left: 115px;
+  border-radius: 50%;
+  object-fit: cover;
   margin-bottom: 8px;
 }
 
-
-
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .bar-team img {
+    width: 60px;          /* smaller image on phones */
+    height: 60px;
+    margin-left: 0;       /* center image on small screens */
+    display: block;
+    margin: 0 auto 8px auto;
+  }
+}
 .bar-team span h2 {
   color: blue;
   margin: 0;
-  padding-left: 120px; 
+  padding-left: 120px;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .bar-team span h2 {
+    padding-left: 0;      /* remove left padding on small screens */
+    text-align: center;   /* center text */
+    font-size: 16px;      /* smaller font for mobile */
+  }
 }
 
 .teamNames a {
   text-decoration: none;
-  margin-left: 5px;  
+  margin-left: 5px;
 }
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .teamNames a {
+    margin-left: 2px;   /* smaller margin on small screens */
+    font-size: 14px;    /* adjust font size for readability */
+  }
+}
+
 
 
