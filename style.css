@@ -1369,6 +1369,7 @@ html, body {
   }
 }
 .horizontal-box .box-item {
+  
   z-index: 0;
   overflow: hidden;
   flex: 0 0 300px;             
@@ -1852,6 +1853,86 @@ html, body {
   .teamNames a {
     margin-left: 2px;   /* smaller margin on small screens */
     font-size: 14px;    /* adjust font size for readability */
+  }
+}
+
+.horizontal-bar00 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columns */
+  gap: 25px;
+  max-width: 1200px;
+  margin: 50px auto;
+  padding: 0 20px;
+}
+
+.bar-text00 {
+  grid-column: 1 / -1; /* take full width */
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 35px;
+}
+
+.bar-item00 {
+  background-color: #0c92b7;
+  height:300px;
+  color: white;
+  text-align: center;
+  padding: 25px;
+  border-radius: 42px;
+  box-shadow: 0 5px 12px rgba(0,0,0,0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.bar-item00 img {
+  width: 400px;
+  height: 270px;
+  margin-bottom: 15px;
+}
+
+.bar-item00 span {
+  display: block;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.bar-item00:hover {
+  background-color: #2207cd;
+  transform: translateX(+10px);
+  box-shadow: 0 10px 25px rgba(34, 13, 215, 0.25);
+}
+
+/* --- Mobile Optimization --- */
+@media screen and (max-width: 768px) {
+  .horizontal-bar00 {
+    grid-template-columns: 1fr 1fr; /* keep 2 columns on tablets */
+  }
+
+  .bar-item00 img {
+    width: 90px;
+    height: 90px;
+  }
+
+  .bar-item00 span {
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .horizontal-bar00 {
+    grid-template-columns: 1fr; /* single column on phones */
+  }
+
+  .bar-item00 img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .bar-item00 span {
+    font-size: 16px;
+  }
+
+  .bar-text00 h1 {
+    font-size: 26px;
   }
 }
 
